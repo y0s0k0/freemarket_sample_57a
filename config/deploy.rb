@@ -37,7 +37,7 @@ set :repo_url, "git@github.com:y0s0k0/freemarket_sample_57a.git"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['/Users/yusuke/.ssh/z57.pem']
+                  keys: ['~/.ssh/z57.pem']
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 set :rbenv_type, :user
