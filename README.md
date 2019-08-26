@@ -15,7 +15,7 @@
 |month|integer|null: false|
 |day|integer|null: false|
 |phone_number|integer|null: false|
-|ZIP|integer|null: false|
+|zip|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |address|integer|null: false|
@@ -25,42 +25,18 @@
 
 
 ### Association
-- has_one :current_address
 - has_one :delivery_information
 - has_many :contacts
 - has_one :money
 - has_one :point
 - has_many :deposit_histories
-- has_many :buyer_ratings
-- has_many :seller_ratings
+- has_many :ratings
 - has_one :credit_card
 - has_many :mercari_box_questions
 - has_many :mercari_box_messages
 - has_many :mercari_box_sukkiris
 - has_many :likes
 - has_many :messages
-
-
-
-## current_addressテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|last_name|string|null: false|
-|first_name|string|null: false|
-|last_name(kana)|string|null: false|
-|first_name(kana)|string|null: false|
-|ZIP|integer|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|adress|integer|null: false|
-|building|string||
-|phone_number|integer||
-|user_id|integer|null: false, foreign_key: true|
-
-
-### Association
-- belongs_to :user
 
 
 ## delivery_informationテーブル
@@ -70,7 +46,7 @@
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
-- [x] |first_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |year|integer|null: false|
 |month|integer|null: false|
 |day|integer|null: false|
@@ -133,25 +109,14 @@
 ### Association
 - belongs_to :user
 
-## buyer_ratingテーブル
+## ratingテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |condition|integer|null: false|
 |message|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-
-
-## seller_ratingテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|condition|integer|null: false|
-|message|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|seller_or_buyer|integer|null: false|
 
 ### Association
 - belongs_to :user
