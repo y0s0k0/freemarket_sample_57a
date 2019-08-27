@@ -1,0 +1,62 @@
+!!!
+%html{:lang => "ja"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %link{:href => "style.css", :rel => "stylesheet"}/
+    %title タイトル
+    %script{:crossorigin => "anonymous", :integrity => "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", :src => "https://code.jquery.com/jquery-3.3.1.min.js"}
+  %body
+    %header
+      .top-contents
+        .top-contents__above
+          %a{:href => ""}
+            %img{:alt => "", :src => "http://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517"}/
+          %form{:action => ""}
+            %input
+        .top-contents__menu
+          .top-contents__menu--left
+            %ul
+              %li
+                %a{:href => ""} カテゴリーから探す
+              %li
+                %a{:href => ""} ブランドから探す
+          .top-contents__menu--right
+            %ul
+              %li
+                %a{:href => ""} お知らせ
+              %li
+                %a{:href => ""} やることリスト
+              %li
+                %a{:href => ""} マイページ
+    %main
+      %article
+        .main-image
+          %img{:alt => "", :src => "http://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?575670517"}/
+      %article
+        .pickup-container
+          %h2 ピックアップカテゴリー
+          %h3 レディース新着アイテム
+          .item-container
+            .item-container__box
+              %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m86983050501_1.jpg?1566386379"}/
+              %h3 test
+              %p ¥1,000
+            .item-container__box
+              %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m86983050501_1.jpg?1566386379"}/
+              %h3 test
+              %p ¥1,000
+            .item-container__box
+              %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m86983050501_1.jpg?1566386379"}/
+              %h3 test
+              %p ¥1,000
+            .item-container__box
+              %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m86983050501_1.jpg?1566386379"}/
+              %h3 test
+              %p ¥1,000
+      %footer
+        
+        %img{:src => "https://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?575670517"}
+    :javascript
+      $(function(){
+      });
