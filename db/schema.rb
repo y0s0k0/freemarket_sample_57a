@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190826055702) do
+ActiveRecord::Schema.define(version: 20190826102926) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
@@ -20,6 +20,22 @@ ActiveRecord::Schema.define(version: 20190826055702) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "nickname",                            null: false
+    t.string   "last_name",                           null: false
+    t.string   "first_name",                          null: false
+    t.string   "last_name_kana",                      null: false
+    t.string   "first_name_kana",                     null: false
+    t.integer  "year",                                null: false
+    t.integer  "month",                               null: false
+    t.integer  "day",                                 null: false
+    t.integer  "phone_number",                        null: false
+    t.integer  "zip",                                 null: false
+    t.string   "prefecture",                          null: false
+    t.string   "city",                                null: false
+    t.string   "address",                             null: false
+    t.string   "building"
+    t.string   "image"
+    t.string   "introduction"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
