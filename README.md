@@ -18,7 +18,7 @@
 |zip|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|address|integer|null: false|
+|address|string|null: false|
 |building|string||
 |image|string||
 |introduction|string||
@@ -35,6 +35,8 @@
 - has_many :mercari_box_questions
 - has_many :mercari_box_messages
 - has_many :mercari_box_sukkiris
+- has_one :bank
+- has_many :items
 - has_many :likes
 - has_many :messages
 
@@ -47,9 +49,11 @@
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|year|integer|null: false|
-|month|integer|null: false|
-|day|integer|null: false|
+|zip|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building|string||
 |phone_number|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -192,7 +196,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
-|image|string|null: false, foreign_key: true|
+|image|string|null: false|
 |description|string|null: false|
 |category|integer|null: false|
 |size|integer||
@@ -219,8 +223,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|item_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true,dependent: :destroy|
+|user_id|integer|null: false, foreign_key: true,dependent: :destroy|
 
 ### Association
 - belongs_to :item
@@ -231,8 +235,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true,dependent: :destroy|
+|user_id|integer|null: false, foreign_key: true,dependent: :destroy|
 
 ### Association
 - belongs_to :item
