@@ -5,58 +5,697 @@
     %meta{:charset => "utf-8"}/
     %link{:href => "style.css", :rel => "stylesheet"}/
     %title タイトル
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+    %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.1.0/css/all.css", :integrity => "sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt", :rel => "stylesheet"}/
     %script{:crossorigin => "anonymous", :integrity => "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", :src => "https://code.jquery.com/jquery-3.3.1.min.js"}
   %body
-    %header
-      .top-contents
-        .top-contents__above
-          %a{:href => ""}
-            %img{:alt => "", :src => "http://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517"}/
+    %header.clearfix
+      .header__container
+        .header__container-above
+          %img{:alt => "", :src => "http://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517"}/
           %form{:action => ""}
-            %input
-        .top-contents__menu
-          .top-contents__menu--left
+            %input{:placeholder => "何かお探しですか？", :type => "text"}/
+            %i.fas.fa-search
+        .header__container-under
+          .header__container-under--left
             %ul
               %li
+                %i.fas.fa-list-ul
                 %a{:href => ""} カテゴリーから探す
               %li
+                %i.fas.fa-tag
                 %a{:href => ""} ブランドから探す
-          .top-contents__menu--right
+          .header__container-under--right
             %ul
               %li
+                %i.far.fa-bell
                 %a{:href => ""} お知らせ
               %li
+                %i.fas.fa-check
                 %a{:href => ""} やることリスト
               %li
                 %a{:href => ""} マイページ
-    %main
-      %article
-        .main-image
-          %img{:alt => "", :src => "http://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?575670517"}/
-      %article
-        .pickup-container
-          %h2 ピックアップカテゴリー
-          %h3 レディース新着アイテム
-          .item-container
-            .item-container__box
-              %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m86983050501_1.jpg?1566386379"}/
-              %h3 test
-              %p ¥1,000
-            .item-container__box
-              %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m86983050501_1.jpg?1566386379"}/
-              %h3 test
-              %p ¥1,000
-            .item-container__box
-              %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m86983050501_1.jpg?1566386379"}/
-              %h3 test
-              %p ¥1,000
-            .item-container__box
-              %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m86983050501_1.jpg?1566386379"}/
-              %h3 test
-              %p ¥1,000
-      %footer
+    %main.clerafix
+      %article.main-image
+        %img{:src => "https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?575670517"}/
+      .category
+        %p 人気のカテゴリー
+        .links
+          %a{:href => ""} レディース
+          %a{:href => ""} メンズ
+          %a{:href => ""} 家電・スマホ・カメラ
+          %a{:href => ""} おもちゃ・ホビー・グッズ
+      .item-container
+        %article.item-container__wrapper
+          .item-container__wrapper-text
+            %p.item-container__wrapper-title レディース新着アイテム
+            %a{:href => ""} もっと見る >
+          .item-container__wrapper-contents
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+
+
+          .item-container__wrapper-text
+            %p.item-container__wrapper-title メンズ新着アイテム
+            %a{:href => ""} もっと見る >
+          .item-container__wrapper-contents
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+          .item-container__wrapper-text
+            %p.item-container__wrapper-title 家電・スマホ・カメラ新着アイテム
+
+            %a{:href => ""} もっと見る >
+          .item-container__wrapper-contents
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+
+
+          .item-container__wrapper-text
+            %p.item-container__wrapper-title おもちゃ・ホビー・グッズ新着アイテム
+            %a{:href => ""} もっと見る >
+          .item-container__wrapper-contents
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+
+      .category
+        %p 人気のブランド
+        .links
+          %a{:href => ""} シャネル
+          %a{:href => ""} ルイヴィトン
+          %a{:href => ""} シュプリーム
+          %a{:href => ""} ナイキ
+      .item-container
+        %article.item-container__wrapper
+          .item-container__wrapper-text
+            %p.item-container__wrapper-title シャネル新着アイテム
+            %a{:href => ""} もっと見る >
+          .item-container__wrapper-contents
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+
+
+          .item-container__wrapper-text
+            %p.item-container__wrapper-title ルイヴィトン新着アイテム
+            %a{:href => ""} もっと見る >
+          .item-container__wrapper-contents
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+
+          .item-container__wrapper-text
+            %p.item-container__wrapper-title シュプリーム新着アイテム
+
+            %a{:href => ""} もっと見る >
+          .item-container__wrapper-contents
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+
+
+          .item-container__wrapper-text
+            %p.item-container__wrapper-title ナイキ新着アイテム
+            %a{:href => ""} もっと見る >
+          .item-container__wrapper-contents
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+
+            .item-container__wrapper-contents-parts
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test    
+              .item-container__wrapper-contents-parts-box
+                .item-container__wrapper-contents-parts-box-price-in
+                  %span.item-container__wrapper-contents-parts-box-in-price ¥3000
+                  %img{:alt => "", :src => "https://static.mercdn.net/thumb/photos/m97883358587_1.jpg?1566829579", :width => "184"}/
+                .item-container__wrapper-contents-parts-box-text
+                  %p.item-container__wrapper-contents-parts-box-text-title test
+
+    
         
-        %img{:src => "https://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?575670517"}
+      %footer
+        %section.footer-above.clearfix
+          .footer-above-container
+            .footer-above-container__box
+              %h2 スマホでかんたんフリマアプリ
+              %p 今すぐ無料ダウンロード！
+              .footer-above-container__box-banner
+                %img{:alt => "", :src => "http://www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?575670517", :width => "68"}/
+                %img{:height => "40", :src => "http://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?575670517", :width => "133"}/
+                %img{:height => "40", :src => "http://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?575670517", :width => "133"}/
+            %img.footer-above-container__image{:alt => "", :src => "http://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?575670517", :width => "300"}/
+        %section.footer-under
+          %nav.clearfix
+            .footer-under__box
+              %h2.footer-head メルカリについて
+              %ul
+                %li
+                  %a{:href => "https://about.mercari.com/"} 会社概要（運営会社）
+                %li
+                  %a{:href => "https://www.mercari.com/jp/jobs/"} 採用情報
+                %li
+                  %a{:href => "https://about.mercari.com/press/news/"} プレスリリース
+                %li
+                  %a{:href => "https://jp-news.mercari.com/", :target => "_blank"} 公式ブログ
+                %li
+                  %a{:href => "https://www.mercari.com/jp/logo-guidelines/"} メルカリロゴ利用ガイドライン
+                .font
+                %li.footer-social-link
+                  %a{:href => "https://twitter.com/mercari_jp", :target => "_blank"}
+                    %i.fab.fa-twitter.fa-3x
+                %li.footer-social-link
+                  %a{:href => "https://www.facebook.com/mercarijp", :target => "_blank"}
+                    %i.fab.fa-facebook-square.fa-3x
+            .footer-under__box
+              %h2.footer-head ヘルプ＆ガイド
+              %ul
+                %li
+                  %a{:href => "https://www.mercari.com/jp/help_center/"} メルカリガイド
+                %li
+                  %a{:href => "https://www.mercari.com/jp/rakuraku-mercari/"} らくらくメルカリ便
+                %li
+                  %a{:href => "https://www.mercari.com/jp/yuyu-mercari/"} ゆうゆうメルカリ便
+                %li
+                  %a{:href => "https://www.mercari.com/jp/rakuraku-ogata/"} 大型メルカリ便
+                %li
+                  %a{:href => "https://www.mercari.com/jp/guide/car/"} 車体取引ガイド
+                %li
+                  %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"} メルカリあんしん・あんぜん宣言！
+                %li
+                  %a{:href => "https://www.mercari.com/jp/authenticity/"} 偽ブランド品撲滅への取り組み
+                %li
+                  %a{:href => "https://www.mercari.com/jp/box/"} メルカリボックス
+            .footer-under__box.footer-under__box--full-width
+              %h2.footer-head プライバシーと利用規約
+              .footer-under__box--inner-footer-cell
+                %ul
+                  %li
+                    %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+                  %li
+                    %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+                  %li
+                    %a{:href => "https://www.mercari.com/jp/tos_smartphone_support/"} あんしんスマホサポート制度に関する利用特約
+                  %li
+                    %a{:href => "https://www.mercari.com/jp/compliance/"} コンプライアンスポリシー
+              .footer-under__box--inner-footer-cell
+                %ul
+                  %li
+                    %a{:href => "https://www.mercari.com/jp/data_security/"} 個人データの安全管理に係る基本方針
+                  %li
+                    %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+                  %li
+                    %a{:href => "https://www.mercari.com/jp/shikin_kessai/"} 資金決済法に基づく表示
+                  %li
+                    %a{:href => "https://about.mercari.com/csr/safety/"} 法令順守と犯罪抑止のために
+            .footer-under__box.footer-under__box--footer-nav-lang
+              %h2.footer-head 国
+              %ul
+                %li
+                  %a.active{:href => "https://www.mercari.com/jp/"} 日本
+                %li
+                  %a{:href => "https://www.mercari.com/"} United States
+        .footer-bottom.clearfix
+          %a.footer-bottom__logo{:href => "https://www.mercari.com/jp/"}
+            %img{:alt => "mercari", :height => "33", :src => "http://www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?3951034907", :width => "124"}/
+          %span.footer-bottom__copyright
+            %p © 2019 Mercari
+      %a.camera{:href => ""}
+        .camera-title 出品
+        %i.fas.fa-camera.fa-3x
     :javascript
       $(function(){
       });
