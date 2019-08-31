@@ -1,0 +1,216 @@
+= render partial: "header"
+.main
+  .main-contents
+    .main-contents__sidebar
+      .main-contents__sidebar-mypage
+        %ul
+          %li
+            =link_to "マイページ"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "お知らせ"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "やることリスト"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "いいね！一覧"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "出品する"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "出品した商品 - 出品中"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "出品した商品 - 取引中"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "出品した商品 - 売却済み"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "購入した商品 - 取引中"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "購入した商品 - 過去の取引"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "ニュース一覧"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "評価一覧"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "ガイド"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "お問い合わせ"
+            %i.fas.fa-chevron-right
+
+      .main-contents__sidebar-merupay
+        %h3 メルペイ
+        %ul
+          %li
+            =link_to "売上・振込申請"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "ポイント"
+            %i.fas.fa-chevron-right
+      .main-contents__sidebar-setting
+        %h3 設定
+        %ul
+          %li
+            =link_to "プロフィール"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "発送元・お届け先住所変更"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "支払い方法"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "メール/パスワード"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "本人情報"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "電話番号の確認"
+            %i.fas.fa-chevron-right
+          %li
+            =link_to "ログアウト"
+            %i.fas.fa-chevron-right
+        
+
+    .main-contents__right
+      .main-contents__right-profile
+        .main-contents__right-profile-el
+          =image_tag "//static.mercdn.net/thumb/members/917205767.jpg?1450362912",width: "60"
+          %p name
+          .main-contents__right-profile-el-rating
+            %span 評価
+            %span.main-contents__right-profile-el-rating-figure 100
+            %span 出品数
+            %span.main-contents__right-profile-el-rating-figure 100
+      .main-contents__right-notice
+        %ul
+          %li
+            %h3
+              =link_to "お知らせ"
+          %li
+            %h3
+              =link_to "やることリスト","#", class: "main-contents__right-notice-todo"
+      .main-contents__right-todo
+      .main-contents__right-item
+        %ul
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to "#", class: "main-contents__right-item-show" do
+              一覧を見る
+
+ 
+      .main-contents__right-item-transaction
+        %h3 購入した商品
+        
+      .main-contents__right-notice
+        %ul
+          %li
+            %h3
+              =link_to "取引中"
+          %li
+            %h3
+              =link_to "過去の取引" ,"#",class: "main-contents__right-notice-todo"
+      .main-contents__right-todo
+      .main-contents__right-item
+        %ul
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to "#", class: "main-contents__right-item-show" do
+              一覧を見る
+= render partial: "footer"
