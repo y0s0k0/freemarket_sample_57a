@@ -5,87 +5,87 @@
       .main-contents__sidebar-mypage
         %ul
           %li
-            %a{:href => "#"}　マイページ
+            =link_to "マイページ"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　お知らせ
+            =link_to "お知らせ"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　やることリスト
+            =link_to "やることリスト"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　いいね！一覧
+            =link_to "いいね！一覧"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　出品する
+            =link_to "出品する"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　出品した商品 - 出品中
+            =link_to "出品した商品 - 出品中"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　出品した商品 - 取引中
+            =link_to "出品した商品 - 取引中"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　出品した商品 - 売却済み
+            =link_to "出品した商品 - 売却済み"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　購入した商品 - 取引中
+            =link_to "購入した商品 - 取引中"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　購入した商品 - 過去の取引
+            =link_to "購入した商品 - 過去の取引"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　ニュース一覧
+            =link_to "ニュース一覧"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　評価一覧
+            =link_to "評価一覧"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　ガイド
+            =link_to "ガイド"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　お問い合わせ
+            =link_to "お問い合わせ"
             %i.fas.fa-chevron-right
 
       .main-contents__sidebar-merupay
         %h3 メルペイ
         %ul
           %li
-            %a{:href => "#"}　売上・振込申請
+            =link_to "売上・振込申請"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　ポイント
+            =link_to "ポイント"
             %i.fas.fa-chevron-right
       .main-contents__sidebar-setting
         %h3 設定
         %ul
           %li
-            %a{:href => "#"}　プロフィール
+            =link_to "プロフィール"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　発送元・お届け先住所変更
+            =link_to "発送元・お届け先住所変更"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　支払い方法
+            =link_to "支払い方法"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　メール/パスワード
+            =link_to "メール/パスワード"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　本人情報
+            =link_to "本人情報"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　電話番号の確認
+            =link_to "電話番号の確認"
             %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}　ログアウト
+            =link_to "ログアウト"
             %i.fas.fa-chevron-right
         
 
     .main-contents__right
       .main-contents__right-profile
         .main-contents__right-profile-el
-          %img{:src => "//static.mercdn.net/thumb/members/917205767.jpg?1450362912",width: "60"}
+          =image_tag "//static.mercdn.net/thumb/members/917205767.jpg?1450362912",width: "60"
           %p name
           .main-contents__right-profile-el-rating
             %span 評価
@@ -96,18 +96,18 @@
         %ul
           %li
             %h3
-              %a{:href => "#"} お知らせ
+              =link_to "お知らせ"
           %li
             %h3
-              %a.main-contents__right-notice-todo{:href => "#"} やることリスト
+              =link_to "やることリスト","#", class: "main-contents__right-notice-todo"
       .main-contents__right-todo
       .main-contents__right-item
         %ul
           %li
-            %a{:href => "#"}
+            =link_to do
               .main-contents__right-item-left
                 %figure.main-contents__right-item-left-image
-                  %img{:src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
                 .main-contents__right-item-left-text
                   %p test
                   %i.far.fa-clock
@@ -115,10 +115,10 @@
               .main-contents__right-item-right
                 %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            =link_to do
               .main-contents__right-item-left
                 %figure.main-contents__right-item-left-image
-                  %img{:src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
                 .main-contents__right-item-left-text
                   %p test
                   %i.far.fa-clock
@@ -126,10 +126,10 @@
               .main-contents__right-item-right
                 %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            =link_to do
               .main-contents__right-item-left
                 %figure.main-contents__right-item-left-image
-                  %img{:src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
                 .main-contents__right-item-left-text
                   %p test
                   %i.far.fa-clock
@@ -137,10 +137,10 @@
               .main-contents__right-item-right
                 %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            =link_to do
               .main-contents__right-item-left
                 %figure.main-contents__right-item-left-image
-                  %img{:src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
                 .main-contents__right-item-left-text
                   %p test
                   %i.far.fa-clock
@@ -148,10 +148,10 @@
               .main-contents__right-item-right
                 %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            =link_to do
               .main-contents__right-item-left
                 %figure.main-contents__right-item-left-image
-                  %img{:src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
                 .main-contents__right-item-left-text
                   %p test
                   %i.far.fa-clock
@@ -159,7 +159,8 @@
               .main-contents__right-item-right
                 %i.fas.fa-chevron-right
           %li
-            %a.main-contents__right-item-show{:href => "#"} 一覧を見る
+            =link_to "#", class: "main-contents__right-item-show" do
+              一覧を見る
 
  
       .main-contents__right-item-transaction
@@ -169,18 +170,18 @@
         %ul
           %li
             %h3
-              %a{:href => "#"} 取引中
+              =link_to "取引中"
           %li
             %h3
-              %a.main-contents__right-notice-todo{:href => "#"} 過去の取引
+              =link_to "過去の取引" ,"#",class: "main-contents__right-notice-todo"
       .main-contents__right-todo
       .main-contents__right-item
         %ul
           %li
-            %a{:href => "#"}
+            =link_to do
               .main-contents__right-item-left
                 %figure.main-contents__right-item-left-image
-                  %img{:src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
                 .main-contents__right-item-left-text
                   %p test
                   %i.far.fa-clock
@@ -188,10 +189,10 @@
               .main-contents__right-item-right
                 %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            =link_to do
               .main-contents__right-item-left
                 %figure.main-contents__right-item-left-image
-                  %img{:src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
                 .main-contents__right-item-left-text
                   %p test
                   %i.far.fa-clock
@@ -199,10 +200,10 @@
               .main-contents__right-item-right
                 %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            =link_to do
               .main-contents__right-item-left
                 %figure.main-contents__right-item-left-image
-                  %img{:src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
                 .main-contents__right-item-left-text
                   %p test
                   %i.far.fa-clock
@@ -210,7 +211,6 @@
               .main-contents__right-item-right
                 %i.fas.fa-chevron-right
           %li
-            %a.main-contents__right-item-show{:href => "#"} 一覧を見る
-        .main-contents__right-item-purchased
-    
+            =link_to "#", class: "main-contents__right-item-show" do
+              一覧を見る
 = render partial: "footer"
