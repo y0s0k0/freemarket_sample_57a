@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'home/mypage'  => 'home#mypage'
   get 'home/profile' => 'home#profile'
   get 'home/logout'  => 'home#logout'
+  get 'home/identification'  => 'home#identification'
 end
