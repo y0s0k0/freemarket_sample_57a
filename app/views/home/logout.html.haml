@@ -1,0 +1,9 @@
+= render partial: "header"
+.main
+  .main-contents
+    = render partial: "sidebar"
+    .main-contents__right--logout
+      .main-contents__right-logout-button
+        %p
+          =link_to "ログアウト","#", class: "main-contents__right-item-logout"
+= render partial: "footer"
