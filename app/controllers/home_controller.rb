@@ -13,5 +13,6 @@ class HomeController < ApplicationController
   end
 
   def identification
+
   end
 end
