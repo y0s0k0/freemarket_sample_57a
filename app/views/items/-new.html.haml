@@ -1,0 +1,144 @@
+.exhibit-container
+  %header.exhibit-header
+    %h1
+      = link_to "new_item_path" do
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3312594182", width: 185, height: 49
+  %main.exhibit-main
+    %section.exhibit-center-container.buy-item-container
+      #sell-container
+        %div
+          .exhibit-container__large__sell__inner---
+            %h2.exhibit-center-container__head 商品情報の入力
+            = form_for @item do |f| {class: "exhibit-form"}
+              .sell-items
+                %h3.sell-items__head
+                  出品画像
+                  %span.form-require 必須
+                %p 最大10枚までアップロードできます
+                .sell-items__dropbox.clearfix.stat-image-number-10
+                  .sell-items__dropbox__container
+                    .sell-upload-items.have-item-0
+                      %ul
+                  .sell-items__dropbox__file.have-item-0
+                    = f.file_field :image, class: "sell-items__dropbox__file__image", name: "image1"
+                    %pre.visible-pc
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    %i.icon-camera
+              .exhibit-container__large__sell__inner__form__content
+                .exhibit-container__large__sell__inner__form__content__group
+                  %label 商品名
+                  %span.form-require 必須
+                  = f.text_field :name, class: "input-default", placeholder: "商品名(必須 40文字まで)"
+-# ここから↓
+                .form-group 
+                  %label 商品の説明
+                  %span.form-require 必須
+                  = f.text_area :description, class: "textarea-default", rows: "5", placeholder: "商品の説明(必須 1,000文字)(色、素材、重さ、定価、注意点など)例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+              .sell-content.clearfix
+                %h3.sell-sub-head 商品の詳細
+                .sell-form-box
+                  .form-group
+                    %label カテゴリー
+                    %span.form-require 必須
+                    %div
+                      .select-wrap
+                      %i.icon-arrow-botton
+                      -# = f.collection_select
+                      %select.select-default
+                        %option ---
+                        %option{value: "1"} レディース
+                        %option{value: "2"} メンズ
+                  .form-group
+                    %label 商品の状態
+                    %span.form-require 必須
+                    .select-wrap
+                      %i.icon-arrow-botton
+                      %select.select-default
+                        %option ---
+                        %option{value: "1"} 新品、未使用
+                        %option{value: "2"} 未使用に近い
+              .sell-content.clearfix
+                %h3.sell-sub-head 配送について
+                -# = link_to "#" do
+                .sell-form-box
+                  .form-group
+                    %label 配送料の負担
+                    %span.form-require 必須
+                    .select-wrap
+                      %i.icon-arrow-botton
+                      %select.select-default
+                        %option ---
+                        %option{value: "1"} 着払い(購入者負担)
+                        %option{value: "2"} 送料込み(出品者負担)
+                  .form-group
+                    %label 発送元の地域
+                    %span.form-require 必須
+                    .select-wrap
+                      %i.icon-arrow-botton
+                      %select.select-default
+                        %option ---
+                        %option{value: "1"} 北海道
+                        %option{value: "2"} 青森県
+                  .form-group
+                    %label 発送日までの日数
+                    %span.form-require 必須
+                    .select-wrap
+                      %i.icon-arrow-botton
+                      %select.select-default
+                        %option ---
+                        %option{value: "1"} 1〜2日で発送
+                        %option{value: "1"} 2〜3日で発送
+              .sell-content.clearfix
+                %h3.sell-sub-head 販売価格(300〜9,999,999)
+                -# = link_to do
+                .sell-form-box
+                  %ul.sell-price
+                    %li.form-group
+                      .clearfix
+                        %label.l-left 価格
+                        %span.form-require 必須
+                        .l-righe.sell-price-input
+                          ¥
+                          %div
+                            = f.text_field :price, class: "input-default", placeholder: "例)300"
+                    %li.clearfix
+                      .l-left 販売手数料 (10%)
+                      .l-right -
+                    %li.clearfix.bold
+                      .l-left 販売利益
+                      .l-right -
+              .modal
+                .modal-inner
+              .sell-content.sell-btn-box
+                %div
+                  %p
+                    = link_to "禁止されている出品"
+                    、
+                    = link_to "行為"
+                    を必ずご確認ください。
+                  %p
+                    またブランド品でシリアルナンバー等がある場合ご記載ください。
+                    = link_to "偽ブランドの販売"
+                    は犯罪であり処罰される可能性があります。
+                  %p
+                    また、出品をもちまして
+                    = link_to "加盟店規約"
+                    に同意したことになります。
+                = f.submit "出品する", class: "btn-default btn-red"
+                = link_to "もどる", class: "btn-defaulg btn-gray"
+            .overlay
+  %footer.single-footer
+    %nav
+      %ul.clearfix
+        %li
+          = link_to "プライバシーポリシー"
+        %li
+          = link_to "メルカリ利用規約"
+        %li
+          = link_to "特定取引に関する表記"
+    = link_to "new_item_path" do
+      =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4248847005", alt: "mercari", width: "80", height: "65"
+    %p
+      %small © 2019 Mercari
+                        
