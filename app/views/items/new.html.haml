@@ -112,15 +112,5 @@
         .exhibit-main__foot__btn
           = f.submit "出品する",  class: "exhibit-main__foot__btn--decision"
           = link_to "もどる", new_item_path, class: "exhibit-main__foot__btn--back"
-  %footer.exhibit-footer
-    %ul
-      %li
-        = link_to "プライバシーポリシー"
-      %li
-        = link_to "メルカリ利用規約"
-      %li
-        = link_to "特定取引に関する表記"
-    .exhibit-footer__logo
-      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2531475304"
-    %small © 2019 Mercari
+  = render partial: "footer"
 
