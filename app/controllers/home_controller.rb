@@ -11,4 +11,8 @@ class HomeController < ApplicationController
 
   def logout
   end
+
+  def identification
+
+  end
 end
