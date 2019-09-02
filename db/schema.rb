@@ -19,4 +19,23 @@ ActiveRecord::Schema.define(version: 20190901085028) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                  null: false
+    t.string   "image",                 null: false
+    t.string   "description",           null: false
+    t.integer  "category",              null: false
+    t.integer  "size"
+    t.integer  "brand"
+    t.integer  "condition",             null: false
+    t.integer  "postage",               null: false
+    t.integer  "region",                null: false
+    t.integer  "days",                  null: false
+    t.integer  "price",                 null: false
+    t.integer  "transaction_condition", null: false
+    t.integer  "user_id",               null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["name"], name: "index_items_on_name", using: :btree
+  end
+
 end

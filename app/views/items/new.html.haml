@@ -1,0 +1,116 @@
+.exhibit-wrapper
+  %header.exhibit-header
+    = link_to new_item_path do {class: "exhibit-header__logo"}
+      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3312594182"
+  %main.exhibit-main
+    = form_for @item do |f|
+      .exhibit-main__head
+        %h2 商品の情報を入力
+      .exhibit-main__image-content
+        .exhibit-main__image-content__title
+          %h3 出品画像
+          %span
+            必須
+          %p 最大10枚までアップロードできます
+          .exhibit-main__image-content__body
+            = f.file_field :image, class: "exhibit-main__image-content__body__file"
+            %pre
+              ドラッグアンドドロップ
+              またはクリックしてファイルをアップデート
+      .exhibit-main__description
+        .exhibit-main__description__title
+          %label
+            商品名
+            %span 必須
+          = f.text_field :name, placeholder: "商品名 (必須40字まで)", class: "exhibit-main__description__title__input"
+        .exhibit-main__description__body
+          %label
+            商品の説明
+            %span 必須
+          = f.text_area :description, placeholder: "商品の説明 (必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入してジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "exhibit-main__description__body__input"
+      .exhibit-main__detail
+        %h3.exhibit-main__detail__title 商品の詳細
+        .exhibit-main__detail__input
+          .exhibit-main__detail__input__category
+            %label
+              カテゴリー
+              %span 必須
+            %select{appearance: "pull-down-menu"}
+              %option ---
+              %option レディース
+              %option メンズ
+          .exhibit-main__detail__input__state
+            %label
+              商品の状態
+              %span 必須
+            %select
+              %option ---
+              %option 新品、未使用
+              %option 未使用に近い
+      .exhibit-main__delivery-info
+        %h3.exhibit-main__delivery-info__title
+          配送について
+          = link_to "?", ""
+        .exhibit-main__delivery-info__input
+          .exhibit-main__delivery-info__input__fee
+            %label
+              配送料の負担
+              %span 必須
+            %select
+              %i.fas.fa-chevron-down
+              %option ---
+              %option 送料込み
+              %option 着払い
+          .exhibit-main__delivery-info__input__area
+            %label
+              発送元の地域
+              %span 必須
+            %select
+              %option ---
+              %option 北海道
+              %option 青森県
+          .exhibit-main__delivery-info__input__shipping-days
+            %label
+              発送までの日数
+              %span 必須
+            %select
+              %option ---
+              %option 1〜2日で発送
+              %option 2〜3日で発送
+      .exhibit-main__sell-price
+        %h3.exhibit-main__sell-price__title
+          販売価格(300〜9,999,999)
+          = link_to "?", ""
+        .exhibit-main__sell-price__body
+          .exhibit-main__sell-price__body__label
+            %label
+              価格
+              %span 必須
+            %p.exhibit-main__sell-price__body__label__input
+              ¥
+              = f.text_field :price, placeholder: "例)  300"
+          .exhibit-main__sell-price__body__fee
+            %p 販売手数料(10%)
+            %p -
+          .exhibit-main__sell-price__body__gain
+            %p 販売利益
+            %p -
+      .exhibit-main__foot
+        %p.exhibit-main__foot__rules
+          = link_to "禁止されている出品"
+          、
+          = link_to "行為"
+          を必ずご確認ください。
+          %br
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          = link_to "偽ブランドの販売"
+          は
+          %br
+          犯罪であり処罰される可能性があります。
+          %br
+          また、出品をもちまして加盟店規約に同意したことになります。
+        .exhibit-main__foot__btn
+          = f.submit "出品する",  class: "exhibit-main__foot__btn--decision"
+          = link_to "もどる", new_item_path, class: "exhibit-main__foot__btn--back"
+  = render partial: "footer"
+
