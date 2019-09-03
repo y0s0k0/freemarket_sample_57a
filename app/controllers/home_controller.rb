@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    
+    @index_item = Item.all.limit(10)
   end
 
   def mypage

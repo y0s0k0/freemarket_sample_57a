@@ -368,13 +368,18 @@ main{
         &-parts {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             padding-bottom:10px;
           
 
           &-box {
-            margin-right: 20px;
-            width:20%;
+            margin: 0 15px 15px 0;
+            width:188px;
             position:relative;
+
+            &-price-in{
+              height:188px;
+            }
 
             &-in-price{
 
@@ -396,7 +401,8 @@ main{
             }
             &-text {
                 background-color: white;
-                height: 64px;
+                height: 58px;
+                width:188px;
 
                 p {
                     font-size: 16px;
