@@ -1,4 +1,7 @@
 = render partial: "header"
+.bread
+  - breadcrumb :mypage
+  = breadcrumbs separator: " &rsaquo; ",class: "breadcrumb"
 .main
   .main-contents
     = render partial: "sidebar"
