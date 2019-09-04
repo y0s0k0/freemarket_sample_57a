@@ -1,0 +1,245 @@
+// ↓ ここからreset scss
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+// ↑ ここまでreset scss 
+
+
+
+
+
+
+
+.signup-wrapper {
+  .signup-main3 {
+    background-color: #FFFFFF;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    height: 1000px;
+    margin: 0 auto 10px;
+    width: 700px;
+    &__head {
+      background-color: #FFFFFF;
+      border-bottom:#eee solid 1px;
+      font-size: 22px;
+      font-weight: 600;
+      height: 63px;
+      line-height: normal;
+      padding: 30px 0px 0px 0px;
+      text-align: center;
+      width: 700px;
+      margin: 0 auto 0;
+    }
+    .a-3 {
+      width: 350px;
+      margin: 0 auto;
+      padding: 30px 10px;
+      .signup-main3__form__name {
+        line-height: 17px;
+        display: flex;
+        p {
+          font-weight: 600;
+          font-size: 14px;
+          margin: 10px 0px 0px;
+        }
+      }
+      .signup-main3__form__name__inputbox {
+        display: flex;
+
+        &__last-name-input {
+          margin: 8px 8px 30px 0px;
+          width: 137.5px;
+          height: 28px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
+        }
+        &__first-name-input {
+          margin: 8px 8px 30px 0px;
+          width: 137.5px;
+          height: 28px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
+        }
+      }
+      .signup-main3__form__name-kana {
+        line-height: 17px;
+        display: flex;
+        p {
+          font-weight: 600;
+          font-size: 14px;
+        }
+      }
+      .signup-main3__form__name-kana__inputbox {
+        display: flex;
+
+        &__last-name-kana-input {
+          margin: 8px 8px 30px 0px;
+          width: 137.5px;
+          height: 28px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
+        }
+        &__first-name-kana-input {
+          margin: 8px 8px 30px 0px;
+          width: 137.5px;
+          height: 28px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
+        }
+      }
+      .signup-main3__form__zip {
+        line-height: 17px;
+        display: flex;
+        p {
+          font-weight: 600;
+          font-size: 14px;
+        }
+        &__input {
+          margin: 8px 8px 30px 0px;
+          width: 317px;
+          height: 28px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
+        }
+      }
+      .signup-main3__form__prefecture {
+        line-height: 17px;
+        display: flex;
+        p {
+          font-weight: 600;
+          font-size: 14px;
+        }
+      }
+      .signup-main3__form__prefecture__select {
+        background-color: #FFFFFF;
+        font-size: 16px;
+        height: 48px;
+        width: 351px;
+        margin: 8px 8px 30px 0px;
+        padding: 10px 16px 8px;
+      }
+      .signup-main3__form__city {
+        line-height: 17px;
+        display: flex;
+        p {
+          font-weight: 600;
+          font-size: 14px;
+        }
+        &__input {
+          margin: 8px 8px 30px 0px;
+          width: 317px;
+          height: 28px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
+        }
+      }
+      .signup-main3__form__building {
+        line-height: 17px;
+        display: flex;
+        p {
+          font-weight: 600;
+          font-size: 14px;
+        }
+        &__input {
+          margin: 8px 8px 30px 0px;
+          width: 317px;
+          height: 28px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
+        }
+      }
+      .signup-main3__form__phone-number {
+        line-height: 17px;
+        display: flex;
+        p {
+          font-weight: 600;
+          font-size: 14px;
+        }
+        &__input {
+          margin: 8px 8px 30px 0px;
+          width: 317px;
+          height: 28px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
+        }
+      }
+      .signup-step3-submit {
+        background-color: #EA352D;
+        color: #FFFFFF;
+        font-size: 14px;
+        height: 50px;
+        width: 350px;
+        margin: 15px 0px 0px;
+      } 
+    }
+  }
+}
+
+.signup-form-any {
+  background-color: #CCCCCC;
+  color: #fff;
+  display: inline-block;
+  padding: 2px 4px;
+  margin-left: 8px;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+
+.signup-footer {
+  height: 220px;
+  width: 100%;
+}

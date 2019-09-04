@@ -1,1 +1,28 @@
-= form_for @user, url: signup_index_path, method: :post, html: {class: 'forth-main-wrapper__box'} do |f|
+= form_for @credit_card, url: done_signup_index_path, method: :post, html: {class: 'forth-main-wrapper__box'} do |f|
+  = f.number_field :card_number, placeholder: '半角数字のみ'
+  %select
+    %option ---
+    %option{value: "1"} 01
+    %option{value: "2"} 02
+    %option{value: "3"} 03
+    %option{value: "4"} 04
+    %option{value: "5"} 05
+    %option{value: "6"} 06
+    %option{value: "7"} 07
+    %option{value: "8"} 08
+    %option{value: "9"} 09
+    %option{value: "10"} 10
+    %option{value: "11"} 11
+    %option{value: "12"} 12
+
+  %select
+    %option ---
+    %option{value: "1"} 19
+    %option{value: "2"} 20
+    %option{value: "3"} 21
+    %option{value: "4"} 22
+    %option{value: "5"} 23
+    %option{value: "6"} 24
+    %option{value: "7"} 25
+
+  = f.number_field :security_code, placeholder: 'カード背面4桁もしくは3桁の番号'
