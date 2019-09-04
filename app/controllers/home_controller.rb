@@ -15,4 +15,8 @@ class HomeController < ApplicationController
   def identification
 
   end
+
+  def list_exhibit
+    @item = Item.all
+  end
 end

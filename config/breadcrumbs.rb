@@ -22,6 +22,11 @@ crumb :identification do
   parent :mypage
 end
 
+crumb :list_exhibit do
+  link '出品した商品 - 出品中', home_list_exhibit_path
+  parent :mypage
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
