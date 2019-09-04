@@ -24,12 +24,9 @@
             %td.item-show-main__container__info__detail__seller__data
               = link_to "ユーザー", item_path, class: "item-show-main__container__info__detail__seller__data--top"
               .item-show-main__container__info__detail__seller__data--bottom
-                %i{class: "fas fa-grin"}
-                  %span 1000
-                %i{class: "fas fa-meh"}
-                  %span 1000
-                %i{class: "fas fa-frown"}
-                  %span 1000
+                = fa_icon "grin", text: 1000
+                = fa_icon "meh", text: 1000
+                = fa_icon "frown", text: 1000
           %tr.item-show-main__container__info__detail__category
             %th.item-show-main__container__info__detail__category__head
               カテゴリー
@@ -103,15 +100,15 @@
       .item-show-main__container__bottom
         .item-show-main__container__bottom__left
           .item-show-main__container__bottom__left--good
-            %i{class: "far fa-heart"}
+            = fa_icon "heart"
             %span いいね！
             %span 100
           .item-show-main__container__bottom__left--report
-            %i{class: "far fa-flag"}
+            = fa_icon "flag"
             %span 不適切な商品の報告
         .item-show-main__container__bottom__right
           = link_to item_path do
-            %i{class: "fas fa-lock"}
+            = fa_icon "lock"
             %span あんしん・あんぜんへの取り組み
 
     .item-show-main__comment
@@ -128,13 +125,13 @@
     .item-show-main__sns
       .item-show-main__sns__container
         = link_to item_path do
-          %i{class: "fab fa-facebook-square"}
+          %i.fab.fa-facebook-square
         = link_to item_path do
-          %i{class: "fab fa-twitter-square"}
+          %i.fab.fa-twitter-square
         = link_to item_path do
-          %i{class: "fab fa-line"}
+          %i.fab.fa-line
         = link_to item_path do
-          %i{class: "fab fa-pinterest-square"}
+          %i.fab.fa-pinterest-square
     %section.item-show-main__profile
       .item-show-main__profile__self-exhibit
         = link_to "ユーザーさんのその他の出品", item_path
@@ -144,8 +141,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -153,8 +152,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -162,8 +163,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -171,8 +174,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -180,8 +185,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -189,10 +196,11 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
-
 
       .item-show-main__profile__relation
         = link_to "コーチのショルダーバッグその他の商品", item_path
@@ -202,8 +210,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -211,8 +221,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -220,8 +232,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -229,8 +243,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -238,8 +254,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
         .item-show-main__profile__image__container
@@ -247,8 +265,10 @@
           .item-show-main__profile__image__container__info
             %h3 商品名
             .item-show-main__profile__image__container__info__price-good
-              %span ¥4,500
-              %i{class: "far fa-heart"}
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
                 %span 100
 
     .item-show-main__bread-crumbs

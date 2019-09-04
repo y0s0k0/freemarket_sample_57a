@@ -64,10 +64,6 @@
               display: flex;
               justify-content: space-between;
               margin-top: 8px;
-              span {
-                color: black;
-                font-weight: normal;
-              }
               .fa-grin {
                 color: #EF5184;
               } 
@@ -289,11 +285,18 @@
             margin-top: 8px;
             width: 100%;
             display: flex;
-            flex-wrap: wrap;
-            .fa-heart {
-              color: #CCCCCC;
-              span {
-                color: #000000;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            &--value {
+              display: inline-block;
+            }
+            &--heart {
+              .fa-heart {
+                color: #CCCCCC;
+                span {
+                  color: #000000;
+                }
               }
             }
           }
