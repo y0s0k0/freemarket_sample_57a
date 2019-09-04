@@ -1,0 +1,136 @@
+= render partial: "header"
+.bread
+  - breadcrumb :mypage
+  = breadcrumbs separator: " &rsaquo; ",class: "breadcrumb"
+.main
+  .main-contents
+    = render partial: "sidebar"
+    .main-contents__right
+      .main-contents__right-profile
+        .main-contents__right-profile-el
+          =image_tag "//static.mercdn.net/thumb/members/917205767.jpg?1450362912",width: "60"
+          %p name
+          .main-contents__right-profile-el-rating
+            %span 評価
+            %span.main-contents__right-profile-el-rating-figure 100
+            %span 出品数
+            %span.main-contents__right-profile-el-rating-figure 100
+      .main-contents__right-notice
+        %ul
+          %li
+            %h3
+              =link_to "お知らせ"
+          %li
+            %h3
+              =link_to "やることリスト","#", class: "main-contents__right-notice-todo"
+      .main-contents__right-todo
+      .main-contents__right-item
+        %ul
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to "一覧を見る","#", class: "main-contents__right-item-show"
+
+      .main-contents__right-item-transaction
+        %h3 購入した商品
+        
+      .main-contents__right-notice
+        %ul
+          %li
+            %h3
+              =link_to "取引中"
+          %li
+            %h3
+              =link_to "過去の取引" ,"#",class: "main-contents__right-notice-todo"
+      .main-contents__right-todo
+      .main-contents__right-item
+        %ul
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to do
+              .main-contents__right-item-left
+                %figure.main-contents__right-item-left-image
+                  =image_tag "//static-mercari-jp.akamaized.net/images/mercari_profile.png"
+                .main-contents__right-item-left-text
+                  %p test
+                  %i.far.fa-clock
+                  %span 13 時間前
+              .main-contents__right-item-right
+                %i.fas.fa-chevron-right
+          %li
+            =link_to "一覧を見る","#", class: "main-contents__right-item-show"
+= render partial: "footer"

@@ -1,0 +1,26 @@
+%header.clearfix
+  .header__container
+    .header__container-above
+      =link_to image_tag('http://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517',class: "img") , root_path
+      %form
+        %input{:placeholder => "何かお探しですか？", :type => "text"}/
+        %i.fas.fa-search
+    .header__container-under
+      .header__container-under--left
+        %ul
+          %li
+            %i.fas.fa-list-ul
+            =link_to 'カテゴリーから探す','#',class:".header__container-under--left-link"
+          %li
+            %i.fas.fa-tag
+            =link_to 'ブランドから探す','#'
+      .header__container-under--right
+        %ul
+          %li
+            %i.far.fa-bell
+            =link_to 'お知らせ','#'
+          %li
+            %i.fas.fa-check
+            =link_to 'やることリスト','#'
+          %li
+            =link_to 'マイページ',home_mypage_path
