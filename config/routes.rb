@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'home/profile' => 'home#profile'
   get 'home/logout'  => 'home#logout'
   get 'home/identification'  => 'home#identification'
-  resources :items,  only: [:new, :create, :edit, :update]
+  resources :items,  only: [:new, :create, :edit, :update, :show]
 end
