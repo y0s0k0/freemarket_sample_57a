@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'home/logout'  => 'home#logout'
   get 'home/identification'  => 'home#identification'
   get 'home/list_exhibit' => 'home#list_exhibit'
+  get 'home/search' => 'home#search'
   resources :items,  only: [:new, :create, :edit, :update]
 end

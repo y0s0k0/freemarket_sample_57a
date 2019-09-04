@@ -211,15 +211,19 @@ header {
   padding: 10px 0 10px 0;
 }
 
-form{
+.field{
   position:relative;
+}
+
+.search{
+  display: none;
 }
 
 .fa-search{
   position:absolute;
-  top:11px;
-  right:12px;
-
+  top:20px;
+  right:215px;
+  cursor: pointer;
   
 }
 
@@ -391,7 +395,7 @@ main{
 
         &-parts {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
             padding-bottom:10px;
           
