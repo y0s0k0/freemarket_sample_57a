@@ -1,0 +1,24 @@
+.signup-wrapper
+  .signup-header
+    =image_tag "mercari-logo.svg", class: "signup-mercari-logo" 
+    = image_tag "新規登録-遷移図2.png", class: "signup-transition-diagram"
+  -# # 5ページ共通 ※ 遷移図の No. だけ変える(scssはstep1に記入)
+    
+  .signup-main2
+    .signup-main2__head 電話番号の確認
+    .a-2
+      .signup-main2__form
+      = form_for @user, url: step3_signup_index_path, method: :get, html: {class: 'second-wrapper__box'} do |f|
+        .signup-main2__form__phone-number
+          %p
+            携帯電話の番号
+        = f.text_field :phone_number, placeholder: '携帯電話の番号を入力', class: "signup-main2__form__phone-number__input" 
+        .signup-main2__form__sub-head__text 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+        
+        = f.submit "SMSを送信する", class: "signup-step2-submit"
+        .signup-main2__under__text ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        .signup-main2__form__imformation-text
+          %p 
+            電話番号の確認が必要な理由＞
+
+  .signup-footer
