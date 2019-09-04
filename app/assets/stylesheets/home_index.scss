@@ -169,10 +169,26 @@ li {
   list-style: none;
 }
 
+.bread{
+}
+
+.breadcrumb{
+  width:1030px;
+  margin:0 auto;
+  height:50px;
+  line-height:50px;
+
+  a{
+    color: #333;
+  }
+  
+}
+
 header {
   height: 100px;
+  border-bottom: 1px solid #eee;
 
-  img {
+  .img {
     width: 136px;
     height: 36px;
     margin-right: 50px;
@@ -185,7 +201,6 @@ header {
     background: #f5f5f5;
     border-radius: 4px;
     font-size: 16px;
-    
   }
 
 }
@@ -210,6 +225,7 @@ form{
 
 .fa-list-ul{
   color:red;
+  
 }
 
 .fa-tag{
@@ -218,6 +234,7 @@ form{
 
 .fa-bell{
   opacity:0.3
+  
 }
 
 .fa-check{
@@ -231,35 +248,58 @@ form{
   &--left {
     float: left;
     font-weight: 700;
+    margin-top:10px;
 
     a {
         color: #333;
         margin-left: 10px;
+        &:hover{
+          color: rgb(0, 149, 238);
+  
+        }
       }
 
     li {
         float: left;
         margin-left: 25px;
+        &:hover{
+          color: rgb(0, 149, 238);
+    
+        }
     }
+
   }
 }
 
 .header__container-under--right {
   float: right;
+  margin-top:10px;
 
   li {
     float: left;
     margin-left: 5px;
+    &:hover{
+      color: rgb(0, 149, 238);
+
+    }
   }
 
   a {
     color: #333;
     margin-left: 5px;
     font-size: 14px;
+    &:hover{
+      color: rgb(0, 149, 238);
+
+    }
   }
 
   i{
     padding:-10px;
+    &:hover{
+      color: rgb(0, 149, 238);
+
+    }
 }
 }
 
@@ -352,13 +392,23 @@ main{
         &-parts {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             padding-bottom:10px;
           
 
           &-box {
-            margin-right: 20px;
-            width:20%;
+            margin: 0 15px 15px 0;
+            width:188px;
             position:relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,.18);
+
+            &:hover{
+              outline: 1px solid #0099e8;
+            }
+
+            &-price-in{
+              height:188px;
+            }
 
             &-in-price{
 
@@ -380,7 +430,8 @@ main{
             }
             &-text {
                 background-color: white;
-                height: 64px;
+                height: 58px;
+                width:188px;
 
                 p {
                     font-size: 16px;
@@ -463,6 +514,12 @@ main{
   }
 }
 
+.bannar-icon{
+  &:hover{
+    opacity:0.7;
+  }
+}
+
 .footer-under {
   height:px;
   background: #212121;
@@ -487,6 +544,9 @@ main{
 
       li{
         margin-top:16px;
+        &:hover{
+          text-decoration: underline
+        }
       }
 
       a {
@@ -526,6 +586,12 @@ nav {
     color:white;
     display: flex;
     padding:30px 0;
+
+    img{
+      &:hover{
+        opacity:0.7;
+      }
+    }
 
     &__copyright{
         width: 745px;

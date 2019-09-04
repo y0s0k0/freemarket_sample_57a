@@ -1,0 +1,63 @@
+.signup-wrapper
+  .signup-header
+    =image_tag "mercari-logo.svg", class: "signup-mercari-logo" 
+    = image_tag "新規登録-遷移図3.png", class: "signup-transition-diagram"
+  -# # 5ページ共通 ※ 遷移図の No. だけ変える(scssはstep1に記入)
+    
+  .signup-main3
+    .signup-main3__head 住所入力
+    .a-3
+      .signup-main3__form
+      = form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'third-wrapper__box'} do |f|
+        .signup-main3__form__name 
+          %p 
+            お名前(全角) 
+            %span.signup-form-require 必須 
+        .signup-main3__form__name__inputbox
+          = f.text_field :last_name, placeholder: '例) 山田', class: "signup-main3__form__name__inputbox__last-name-input"
+          = f.text_field :first_name, placeholder: '例) 彩', class: "signup-main3__form__name__inputbox__first-name-input"
+        .signup-main3__form__name-kana 
+          %p 
+            お名前カナ(全角)
+            %span.signup-form-require 必須
+        .signup-main3__form__name-kana__inputbox
+          = f.text_field :last_name_kana, placeholder: '例) ヤマダ' , class: "signup-main3__form__name-kana__inputbox__last-name-kana-input"
+          = f.text_field :first_name_kana, placeholder: '例) アヤ', class: "signup-main3__form__name-kana__inputbox__first-name-kana-input"
+
+        .signup-main3__form__zip
+          %p 
+            郵便番号
+            %span.signup-form-require 必須 
+        = f.text_field :zip, placeholder: '例) 123-4567', class: "signup-main3__form__zip__input"
+        .signup-main3__form__prefecture
+          %p 
+            都道府県
+            %span.signup-form-require 必須
+        %select.signup-main3__form__prefecture__select
+          %option ---
+          %option{value: "1"} 北海道
+          %option{value: "2"} 青森県
+          %option{value: "3"} 秋田県
+          %option{value: "4"} 岩手県
+          %option{value: "5"} 山形県
+          %option{value: "6"} 福島県
+
+        .signup-main3__form__city
+          %p
+            市区町村
+            %span.signup-form-require 必須
+        = f.text_field :city, placeholder: '例) 大仙市大曲', class: "signup-main3__form__city__input" 
+        .signup-main3__form__building
+          %p
+            建物名
+            %span.signup-form-any 任意
+        = f.text_field :building, placeholder: '例) ラフォーレ小鹿205', class: "signup-main3__form__building__input" 
+
+        .signup-main3__form__phone-number
+          %p
+            電話
+            %span.signup-form-any 任意
+        = f.text_field :phone_number, placeholder: '例) 08012345678', class: "signup-main3__form__phone-number__input" 
+        = f.submit "次へ進む", class: "signup-step3-submit"
+
+  .signup-footer
