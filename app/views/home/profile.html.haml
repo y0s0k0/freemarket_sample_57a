@@ -1,0 +1,19 @@
+= render partial: "header"
+- breadcrumb :profile
+= breadcrumbs separator: " &rsaquo; " ,class: "breadcrumb"
+.main
+  .main-contents
+    = render partial: "sidebar"
+    .main-contents__right--back
+      %h2　プロフィール
+      .main-contents__right--back-profile
+        .main-contents__right--back-profile-el-image
+          %figure
+            =image_tag "//static.mercdn.net/thumb/members/917205767.jpg?1450362912",width: "60",class: "main-contents__right--back-profile-el-image-in"
+          %input
+      .main-contents__right-textarea
+        %textarea(name="" cols="30" rows="10")
+      .main-contents__right-item
+        %p
+          =link_to "変更する","#", class: "main-contents__right-item-change"
+= render partial: "footer"
