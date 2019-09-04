@@ -2,9 +2,12 @@
   .header__container
     .header__container-above
       =link_to image_tag('http://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517',class: "img") , root_path
-      %form
-        %input{:placeholder => "何かお探しですか？", :type => "text"}/
-        %i.fas.fa-search
+      = form_tag(home_search_path, :method => 'get') do
+        = text_field_tag :search,'',:placeholder => "何かお探しですか？",class: "field",name:"keyword"
+        %label
+          %i.fas.fa-search
+          = submit_tag 'Search', :name => nil , class: "search"
+          
     .header__container-under
       .header__container-under--left
         %ul
