@@ -1,0 +1,277 @@
+.item-show-wrapper
+  = render partial: "home/header"
+  %main.item-show-main
+    %section.item-show-main__container
+      %h1.item-show-main__container--head 商品名
+      .item-show-main__container__info
+        .item-show-main__container__info__image
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__container__info__image--large"
+          .item-show-main__container__info__image__small
+            = image_tag "m59627988225_1.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "m59627988225_2.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "m59627988225_3.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "m59627988225_4.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "m59627988225_5.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "m59627988225_6.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "m59627988225_7.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "", class: "item-show-main__container__info__image__small__upload"
+        %table.item-show-main__container__info__detail{border: "1"}
+          %tr.item-show-main__container__info__detail__seller
+            %th.item-show-main__container__info__detail__seller__head
+              出品者
+            %td.item-show-main__container__info__detail__seller__data
+              = link_to "ユーザー", item_path, class: "item-show-main__container__info__detail__seller__data--top"
+              .item-show-main__container__info__detail__seller__data--bottom
+                = fa_icon "grin", text: 1000
+                = fa_icon "meh", text: 1000
+                = fa_icon "frown", text: 1000
+          %tr.item-show-main__container__info__detail__category
+            %th.item-show-main__container__info__detail__category__head
+              カテゴリー
+            %td.item-show-main__container__info__detail__category__data
+              %p
+                = link_to "レディース"
+                %br
+                = link_to "＞ バッグ"
+                %br
+                = link_to "＞ ショルダーバッグ"
+
+          %tr.item-show-main__container__info__detail__brand
+            %th.item-show-main__container__info__detail__brand__head
+              ブランド
+            %td.item-show-main__container__info__detail__brand__data
+              = link_to "コーチ", item_path
+
+          %tr.item-show-main__container__info__detail__condition
+            %th.item-show-main__container__info__detail__condition__head
+              商品の状態
+            %td.item-show-main__container__info__detail__condition__data
+              新品
+
+          %tr.item-show-main__container__info__detail__charge
+            %th.item-show-main__container__info__detail__charge__head
+              配送料の負担
+            %td.item-show-main__container__info__detail__charge__data
+              送料込み(出品者負担)
+
+          %tr.item-show-main__container__info__detail__delivery
+            %th.item-show-main__container__info__detail__delivery__head
+              配送の方法
+            %td.item-show-main__container__info__detail__delivery__data
+              %p.item-show-main__container__info__detail__delivery__data--top らくらくメルカリ便
+              %span.item-show-main__container__info__detail__delivery__data--bottom 匿名配送
+
+          %tr.item-show-main__container__info__detail__region
+            %th.item-show-main__container__info__detail__region__head
+              発送元地域
+            %td.item-show-main__container__info__detail__region__data
+              = link_to "東京都", item_path
+
+          %tr.item-show-main__container__info__detail__shipping
+            %th.item-show-main__container__info__detail__shipping__head
+              発送の目安
+            %td.item-show-main__container__info__detail__shipping__data
+              1〜2日で発送
+      .item-show-main__container__price
+        %span.item-show-main__container__price--left ¥4,100
+        %span.item-show-main__container__price--center (税込)
+        %span.item-show-main__container__price--right 送料込み
+      .item-show-main__container__move
+        = link_to "購入画面に進む", item_path
+      .item-show-main__container__description
+        %p
+          ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+          %br ここに説明文を記述。
+      .item-show-main__container__bottom
+        .item-show-main__container__bottom__left
+          .item-show-main__container__bottom__left--good
+            = fa_icon "heart"
+            %span いいね！
+            %span 100
+          .item-show-main__container__bottom__left--report
+            = fa_icon "flag"
+            %span 不適切な商品の報告
+        .item-show-main__container__bottom__right
+          = link_to item_path do
+            = fa_icon "lock"
+            %span あんしん・あんぜんへの取り組み
+
+    .item-show-main__comment
+      .item-show-main__comment--rule
+        %p
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.item-show-main__comment--input
+      %button.item-show-main__comment--button コメントする
+
+    .item-show-main__change
+      = link_to "＜ 戻る"
+      = link_to "進む ＞"
+    .item-show-main__sns
+      .item-show-main__sns__container
+        = link_to item_path do
+          %i.fab.fa-facebook-square
+        = link_to item_path do
+          %i.fab.fa-twitter-square
+        = link_to item_path do
+          %i.fab.fa-line
+        = link_to item_path do
+          %i.fab.fa-pinterest-square
+    %section.item-show-main__profile
+      .item-show-main__profile__self-exhibit
+        = link_to "ユーザーさんのその他の出品", item_path
+      .item-show-main__profile__image
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+      .item-show-main__profile__relation
+        = link_to "コーチのショルダーバッグその他の商品", item_path
+      .item-show-main__profile__image
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+        .item-show-main__profile__image__container
+          = image_tag "m59627988225_1.jpg", class: "item-show-main__profile__image__container--detail"
+          .item-show-main__profile__image__container__info
+            %h3 商品名
+            .item-show-main__profile__image__container__info__price-good
+              %span.item-show-main__profile__image__container__info__price-good--value
+                ¥4,500
+              .item-show-main__profile__image__container__info__price-good--heart
+                = fa_icon "heart"
+                %span 100
+
+    .item-show-main__bread-crumbs
+      %p メルカリ ＞ COACH
+
+  = render partial: "home/footer"
