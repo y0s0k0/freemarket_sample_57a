@@ -1,0 +1,37 @@
+.main-contents__right{
+
+    &-notice{
+        h3{
+            font-weight: bold;
+        }
+    }
+
+    &-exhibit{
+        padding: 30px 30px 30px 16px;
+        width: 100%;
+        background: #fafafa;
+
+        h3{
+            font-weight: bold;
+        }
+  }
+
+  &-item-left-text{
+      i{
+        color: #888;
+        margin-right: 2px;
+      }
+
+      span{
+        
+        margin-right: 2px;
+      }
+
+      &-button{
+          background-color: #0099e8;
+          border-radius: 2px;
+          padding: 5px 6px;
+          color: #fff !important;
+      }
+  }
+}

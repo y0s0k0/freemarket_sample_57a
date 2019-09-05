@@ -1,0 +1,41 @@
+= render partial: "header"
+- breadcrumb :list_exhibit
+= breadcrumbs separator: " &rsaquo; ",class: "breadcrumb"
+.main
+  .main-contents
+    = render partial: "sidebar"
+    .main-contents__right
+      .main-contents__right-exhibit
+        %h3 出品した商品
+          
+      .main-contents__right-notice
+        %ul
+          %li
+            %h3
+              =link_to "出品中"
+          %li
+            %h3
+              =link_to "取引中","#", class: "main-contents__right-notice-todo"
+          %li
+            %h3
+              =link_to "売却済み","#", class: "main-contents__right-notice-todo"
+      .main-contents__right-todo
+      .main-contents__right-item
+        %ul
+          - @item.each do |i|
+            %li
+              =link_to do
+                .main-contents__right-item-left 
+                  %figure.main-contents__right-item-left-image
+                    =image_tag "#{i.image}"
+                  .main-contents__right-item-left-text
+                    %p= i.name
+                    %i.far.fa-heart
+                    %span 10
+                    %i.far.fa-comment-alt
+                    %span 5
+                    %span.main-contents__right-item-left-text-button 出品中
+                .main-contents__right-item-right
+                  %i.fas.fa-chevron-right
+
+= render partial: "footer"
