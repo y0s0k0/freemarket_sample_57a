@@ -2,10 +2,11 @@
   = render partial: "home/header"
   %main.item-show-main
     %section.item-show-main__container
-      %h1.item-show-main__container--head 商品名
+      %h1.item-show-main__container--head
+      = @item.name
       .item-show-main__container__info
         .item-show-main__container__info__image
-          = image_tag "m59627988225_1.jpg", class: "item-show-main__container__info__image--large"
+          = image_tag @item.image, class: "item-show-main__container__info__image--large"
           .item-show-main__container__info__image__small
             = image_tag "m59627988225_1.jpg", class: "item-show-main__container__info__image__small__upload"
             = image_tag "m59627988225_2.jpg", class: "item-show-main__container__info__image__small__upload"
@@ -32,29 +33,35 @@
               カテゴリー
             %td.item-show-main__container__info__detail__category__data
               %p
-                = link_to "レディース"
+                = link_to do
+                  =@item.category
                 %br
-                = link_to "＞ バッグ"
+                = link_to do
+                  >
+                  =@item.category
                 %br
-                = link_to "＞ ショルダーバッグ"
+                = link_to do
+                  >
+                  =@item.category
 
           %tr.item-show-main__container__info__detail__brand
             %th.item-show-main__container__info__detail__brand__head
               ブランド
             %td.item-show-main__container__info__detail__brand__data
-              = link_to "コーチ", item_path
+              = link_to item_path do
+                =@item.brand
 
           %tr.item-show-main__container__info__detail__condition
             %th.item-show-main__container__info__detail__condition__head
               商品の状態
             %td.item-show-main__container__info__detail__condition__data
-              新品
+              =@item.condition
 
           %tr.item-show-main__container__info__detail__charge
             %th.item-show-main__container__info__detail__charge__head
               配送料の負担
             %td.item-show-main__container__info__detail__charge__data
-              送料込み(出品者負担)
+              =@item.postage
 
           %tr.item-show-main__container__info__detail__delivery
             %th.item-show-main__container__info__detail__delivery__head
@@ -67,36 +74,25 @@
             %th.item-show-main__container__info__detail__region__head
               発送元地域
             %td.item-show-main__container__info__detail__region__data
-              = link_to "東京都", item_path
+              = link_to item_path do
+                =@item.region
 
           %tr.item-show-main__container__info__detail__shipping
             %th.item-show-main__container__info__detail__shipping__head
               発送の目安
             %td.item-show-main__container__info__detail__shipping__data
-              1〜2日で発送
+              =@item.days
       .item-show-main__container__price
-        %span.item-show-main__container__price--left ¥4,100
+        %span.item-show-main__container__price--left
+          ¥
+          =@item.price
         %span.item-show-main__container__price--center (税込)
         %span.item-show-main__container__price--right 送料込み
       .item-show-main__container__move
         = link_to "購入画面に進む", item_path
       .item-show-main__container__description
         %p
-          ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
-          %br ここに説明文を記述。
+          =@item.description
       .item-show-main__container__bottom
         .item-show-main__container__bottom__left
           .item-show-main__container__bottom__left--good
