@@ -27,12 +27,13 @@
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
               - @index_item.each do |i|
-                .item-container__wrapper-contents-parts-box
-                  .item-container__wrapper-contents-parts-box-price-in
-                    %span.item-container__wrapper-contents-parts-box-in-price= i.price
-                    =image_tag "#{i.image}", :width => "188" ,height: "188"
-                  .item-container__wrapper-contents-parts-box-text
-                    %p.item-container__wrapper-contents-parts-box-text-title= i.name
+                =link_to "/items/#{i.id}" do
+                  .item-container__wrapper-contents-parts-box
+                    .item-container__wrapper-contents-parts-box-price-in
+                      %span.item-container__wrapper-contents-parts-box-in-price= i.price
+                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                    .item-container__wrapper-contents-parts-box-text
+                      %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
           .item-container__wrapper-text
             %p#mens.item-container__wrapper-title メンズ新着アイテム
@@ -40,12 +41,13 @@
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
               - @index_item.each do |i|
-                .item-container__wrapper-contents-parts-box
-                  .item-container__wrapper-contents-parts-box-price-in
-                    %span.item-container__wrapper-contents-parts-box-in-price= i.price
-                    =image_tag "#{i.image}", :width => "188" ,height: "188"
-                  .item-container__wrapper-contents-parts-box-text
-                    %p.item-container__wrapper-contents-parts-box-text-title= i.name
+                =link_to "/items/#{i.id}" do
+                  .item-container__wrapper-contents-parts-box
+                    .item-container__wrapper-contents-parts-box-price-in
+                      %span.item-container__wrapper-contents-parts-box-in-price= i.price
+                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                    .item-container__wrapper-contents-parts-box-text
+                      %p.item-container__wrapper-contents-parts-box-text-title= i.name
               
           .item-container__wrapper-text
             %p#ele.item-container__wrapper-title 家電・スマホ・カメラ新着アイテム
@@ -54,12 +56,13 @@
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
               - @index_item.each do |i|
-                .item-container__wrapper-contents-parts-box
-                  .item-container__wrapper-contents-parts-box-price-in
-                    %span.item-container__wrapper-contents-parts-box-in-price= i.price
-                    =image_tag "#{i.image}", :width => "188" ,height: "188"
-                  .item-container__wrapper-contents-parts-box-text
-                    %p.item-container__wrapper-contents-parts-box-text-title= i.name
+                =link_to "/items/#{i.id}" do
+                  .item-container__wrapper-contents-parts-box
+                    .item-container__wrapper-contents-parts-box-price-in
+                      %span.item-container__wrapper-contents-parts-box-in-price= i.price
+                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                    .item-container__wrapper-contents-parts-box-text
+                      %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
           .item-container__wrapper-text
             %p#toy.item-container__wrapper-title おもちゃ・ホビー・グッズ新着アイテム
@@ -67,12 +70,13 @@
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
               - @index_item.each do |i|
-                .item-container__wrapper-contents-parts-box
-                  .item-container__wrapper-contents-parts-box-price-in
-                    %span.item-container__wrapper-contents-parts-box-in-price= i.price
-                    =image_tag "#{i.image}", :width => "188" ,height: "188"
-                  .item-container__wrapper-contents-parts-box-text
-                    %p.item-container__wrapper-contents-parts-box-text-title= i.name
+                =link_to "/items/#{i.id}" do
+                  .item-container__wrapper-contents-parts-box
+                    .item-container__wrapper-contents-parts-box-price-in
+                      %span.item-container__wrapper-contents-parts-box-in-price= i.price
+                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                    .item-container__wrapper-contents-parts-box-text
+                      %p.item-container__wrapper-contents-parts-box-text-title= i.name
               
 
       .category
@@ -90,12 +94,13 @@
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
               - @index_item.each do |i|
-                .item-container__wrapper-contents-parts-box
-                  .item-container__wrapper-contents-parts-box-price-in
-                    %span.item-container__wrapper-contents-parts-box-in-price= i.price
-                    =image_tag "#{i.image}", :width => "188" ,height: "188"
-                  .item-container__wrapper-contents-parts-box-text
-                    %p.item-container__wrapper-contents-parts-box-text-title= i.name
+                =link_to "/items/#{i.id}" do
+                  .item-container__wrapper-contents-parts-box
+                    .item-container__wrapper-contents-parts-box-price-in
+                      %span.item-container__wrapper-contents-parts-box-in-price= i.price
+                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                    .item-container__wrapper-contents-parts-box-text
+                      %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
           .item-container__wrapper-text
             %p#vuitton.item-container__wrapper-title ルイヴィトン新着アイテム
@@ -103,12 +108,13 @@
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
               - @index_item.each do |i|
-                .item-container__wrapper-contents-parts-box
-                  .item-container__wrapper-contents-parts-box-price-in
-                    %span.item-container__wrapper-contents-parts-box-in-price= i.price
-                    =image_tag "#{i.image}", :width => "188" ,height: "188"
-                  .item-container__wrapper-contents-parts-box-text
-                    %p.item-container__wrapper-contents-parts-box-text-title= i.name             
+                =link_to "/items/#{i.id}" do
+                  .item-container__wrapper-contents-parts-box
+                    .item-container__wrapper-contents-parts-box-price-in
+                      %span.item-container__wrapper-contents-parts-box-in-price= i.price
+                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                    .item-container__wrapper-contents-parts-box-text
+                      %p.item-container__wrapper-contents-parts-box-text-title= i.name             
 
           .item-container__wrapper-text
             %p#supreme.item-container__wrapper-title シュプリーム新着アイテム
@@ -116,12 +122,13 @@
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
               - @index_item.each do |i|
-                .item-container__wrapper-contents-parts-box
-                  .item-container__wrapper-contents-parts-box-price-in
-                    %span.item-container__wrapper-contents-parts-box-in-price= i.price
-                    =image_tag "#{i.image}", :width => "188" ,height: "188"
-                  .item-container__wrapper-contents-parts-box-text
-                    %p.item-container__wrapper-contents-parts-box-text-title= i.name
+                =link_to "/items/#{i.id}" do
+                  .item-container__wrapper-contents-parts-box
+                    .item-container__wrapper-contents-parts-box-price-in
+                      %span.item-container__wrapper-contents-parts-box-in-price= i.price
+                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                    .item-container__wrapper-contents-parts-box-text
+                      %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
           .item-container__wrapper-text
             %p#nike.item-container__wrapper-title ナイキ新着アイテム
@@ -129,12 +136,13 @@
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
               - @index_item.each do |i|
-                .item-container__wrapper-contents-parts-box
-                  .item-container__wrapper-contents-parts-box-price-in
-                    %span.item-container__wrapper-contents-parts-box-in-price= i.price
-                    =image_tag "#{i.image}", :width => "188" ,height: "188"
-                  .item-container__wrapper-contents-parts-box-text
-                    %p.item-container__wrapper-contents-parts-box-text-title= i.name
+                =link_to "/items/#{i.id}" do
+                  .item-container__wrapper-contents-parts-box
+                    .item-container__wrapper-contents-parts-box-price-in
+                      %span.item-container__wrapper-contents-parts-box-in-price= i.price
+                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                    .item-container__wrapper-contents-parts-box-text
+                      %p.item-container__wrapper-contents-parts-box-text-title= i.name
                             
       = render partial: "footer"
       = render partial: "camera"
