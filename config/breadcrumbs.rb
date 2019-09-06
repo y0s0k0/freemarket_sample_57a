@@ -27,6 +27,11 @@ crumb :list_exhibit do
   parent :mypage
 end
 
+crumb :exhibit_product do
+  link '出品商品画面', "/home/exhibit_product/:id"
+  parent :list_exhibit
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get 'home/logout'  => 'home#logout'
   get 'home/identification' => 'home#identification'
   get 'home/list_exhibit' => 'home#list_exhibit'
-  resources :items,  only: [:new, :create, :edit, :update]
+  get 'home/search' => 'home#search'
+  get 'home/exhibit_product/:id' => 'home#exhibit_product'
+  delete  'home/:id'  => 'home#destroy'
+  resources :items, only: [:new, :create, :edit, :update, :show]
+　resources :purchase, only: [:new, :create]
   devise_for :users 
   resources :signup do
     collection do

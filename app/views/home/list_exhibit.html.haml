@@ -24,7 +24,7 @@
         %ul
           - @item.each do |i|
             %li
-              =link_to do
+              =link_to "/home/exhibit_product/#{i.id}" do
                 .main-contents__right-item-left 
                   %figure.main-contents__right-item-left-image
                     =image_tag "#{i.image}"
@@ -39,3 +39,4 @@
                   %i.fas.fa-chevron-right
 
 = render partial: "footer"
+= render partial: "camera"
