@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'home/mypage'  => 'home#mypage'
   get 'home/profile' => 'home#profile'
   get 'home/logout'  => 'home#logout'
-  get 'home/identification'  => 'home#identification'
+  get 'home/identification' => 'home#identification'
   get 'home/list_exhibit' => 'home#list_exhibit'
   get 'home/search' => 'home#search'
   get 'home/exhibit_product/:id' => 'home#exhibit_product'
@@ -21,4 +21,5 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページに遷移
     end
   end
+  resources :credit_cards, only: :new
 end
