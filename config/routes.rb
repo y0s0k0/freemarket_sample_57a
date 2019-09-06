@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'home/identification'  => 'home#identification'
   get 'home/list_exhibit' => 'home#list_exhibit'
   get 'home/search' => 'home#search'
-  resources :items,  only: [:new, :create, :edit, :update, :show]
+  resources :items, only: [:new, :create, :edit, :update, :show]
+  resources :purchase, only: [:new, :create]
   devise_for :users 
   resources :signup do
     collection do
