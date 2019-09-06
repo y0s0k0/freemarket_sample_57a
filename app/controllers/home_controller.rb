@@ -26,4 +26,14 @@ class HomeController < ApplicationController
     @item_count = Item.where('name LIKE(?)', "%#{params[:keyword]}%").count
     @key = params[:keyword]
   end
+
+  def exhibit_product
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to home_list_exhibit_path
+  end
 end

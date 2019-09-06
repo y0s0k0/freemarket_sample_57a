@@ -1,0 +1,119 @@
+= render partial: "home/header"
+- breadcrumb :exhibit_product
+= breadcrumbs separator: " &rsaquo; " ,class: "breadcrumb"
+.main.result
+  .main-contents
+    .main-contents-exhibit_product
+      %main.item-show-main
+        %section.item-show-main__exhibit
+          %h1.item-show-main__container--head
+            = @item.name
+          .item-show-main__container__info
+            .item-show-main__container__info__image
+              = image_tag @item.image, class: "item-show-main__container__info__image--large"
+              .item-show-main__container__info__image__small
+                = image_tag "m59627988225_1.jpg", class: "item-show-main__container__info__image__small__upload"
+                = image_tag "m59627988225_2.jpg", class: "item-show-main__container__info__image__small__upload"
+                = image_tag "m59627988225_3.jpg", class: "item-show-main__container__info__image__small__upload"
+                = image_tag "m59627988225_4.jpg", class: "item-show-main__container__info__image__small__upload"
+                = image_tag "m59627988225_5.jpg", class: "item-show-main__container__info__image__small__upload"
+                = image_tag "m59627988225_6.jpg", class: "item-show-main__container__info__image__small__upload"
+                = image_tag "m59627988225_7.jpg", class: "item-show-main__container__info__image__small__upload"
+                = image_tag "", class: "item-show-main__container__info__image__small__upload"
+                = image_tag "", class: "item-show-main__container__info__image__small__upload"
+                = image_tag "", class: "item-show-main__container__info__image__small__upload"
+            %table.item-show-main__container__info__detail{border: "1"}
+              %tr.item-show-main__container__info__detail__seller
+                %th.item-show-main__container__info__detail__seller__head
+                  出品者
+                %td.item-show-main__container__info__detail__seller__data
+                  = link_to "ユーザー", "#", class: "item-show-main__container__info__detail__seller__data--top"
+                  .item-show-main__container__info__detail__seller__data--bottom
+                    = fa_icon "grin", text: 1000
+                    = fa_icon "meh", text: 1000
+                    = fa_icon "frown", text: 1000
+              %tr.item-show-main__container__info__detail__category
+                %th.item-show-main__container__info__detail__category__head
+                  カテゴリー
+                %td.item-show-main__container__info__detail__category__data
+                  %p
+                    = link_to do
+                      =@item.category
+                    %br
+                    = link_to do
+                      >
+                      =@item.category
+                    %br
+                    = link_to do
+                      >
+                      =@item.category
+
+              %tr.item-show-main__container__info__detail__brand
+                %th.item-show-main__container__info__detail__brand__head
+                  ブランド
+                %td.item-show-main__container__info__detail__brand__data
+                  = link_to item_path do
+                    =@item.brand
+
+              %tr.item-show-main__container__info__detail__condition
+                %th.item-show-main__container__info__detail__condition__head
+                  商品の状態
+                %td.item-show-main__container__info__detail__condition__data
+                  =@item.condition
+
+              %tr.item-show-main__container__info__detail__charge
+                %th.item-show-main__container__info__detail__charge__head
+                  配送料の負担
+                %td.item-show-main__container__info__detail__charge__data
+                  =@item.postage
+
+              %tr.item-show-main__container__info__detail__delivery
+                %th.item-show-main__container__info__detail__delivery__head
+                  配送の方法
+                %td.item-show-main__container__info__detail__delivery__data
+                  %p.item-show-main__container__info__detail__delivery__data--top らくらくメルカリ便
+                  %span.item-show-main__container__info__detail__delivery__data--bottom 匿名配送
+
+              %tr.item-show-main__container__info__detail__region
+                %th.item-show-main__container__info__detail__region__head
+                  発送元地域
+                %td.item-show-main__container__info__detail__region__data
+                  = link_to item_path do
+                    =@item.region
+
+              %tr.item-show-main__container__info__detail__shipping
+                %th.item-show-main__container__info__detail__shipping__head
+                  発送の目安
+                %td.item-show-main__container__info__detail__shipping__data
+                  =@item.days
+          .item-show-main__container__price
+            %span.item-show-main__container__price--left
+              ¥
+              =@item.price
+            %span.item-show-main__container__price--center (税込)
+            %span.item-show-main__container__price--right 送料込み
+          
+          .item-show-main__container__description-exhibit
+            %p
+            =@item.description
+
+        %section.item-show-main__exhibit-button
+          .item-show-main__comment-exhibit-button
+            =link_to "商品の編集" ,"#", class:"item-show-main__comment--button-exhibit item-show-main__comment--button-exhibit-red"
+            %p or
+            =link_to "出品を一旦停止する" ,"#", class:"item-show-main__comment--button-exhibit"
+            =link_to "この商品を削除する" ,"/home/#{@item.id}", method: :delete, class:"item-show-main__comment--button-exhibit"
+
+        %section.item-show-main__exhibit-button
+          .item-show-main__comment-exhibit
+            .item-show-main__comment--rule
+              %p
+                相手のことを考え丁寧なコメントを心がけましょう。
+                %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %textarea.item-show-main__comment--input
+            %button.item-show-main__comment--button コメントする
+          
+
+
+
+= render partial: "home/footer"
