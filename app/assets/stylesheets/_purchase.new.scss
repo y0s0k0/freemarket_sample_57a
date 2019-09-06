@@ -96,14 +96,16 @@
         }
         &--address {
           margin-top: 8px;
+          span {
+            display: inline-block;
+            margin-top: 8px;
+          }
         }
       }
       &--change {
         margin-top: 8px;
         display: inline-block;
         width: 100%;
-        // display: flex;
-        // align-items: flex-end;
         color: #0099e8;
         text-align: right;
         a {

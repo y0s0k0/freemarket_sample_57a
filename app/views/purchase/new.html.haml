@@ -1,7 +1,6 @@
 .purchase-wrapper
   = render partial: "items/header"
   %main.purchase-main
-    -# %section.purchase-main
     %h2.purchase-main__head
       購入内容の確認
     .purchase-main__detail
@@ -18,7 +17,7 @@
             支払い金額
           %span.purchase-main__detail__container__pay--price
             ¥4,500
-        = link_to "購入する", purchase_items_path, class: "purchase-main__detail__container__button"
+        = link_to "購入する", new_purchase_path, class: "purchase-main__detail__container__button"
     .purchase-main__delivery-info
       .purchase-main__delivery-info__container
         .purchase-main__delivery-info__container__detail
@@ -28,9 +27,7 @@
             〒123-4567
             %br 愛知県◯◯市◯◯ ◯◯-◯◯
             %span 愛知太郎
-        -# .purchase-main__delivery-info__contanier--change
-        -#   %p
-        = link_to "変更する ＞", purchase_items_path, class: "purchase-main__delivery-info__container--change"
+        = link_to "変更する ＞", new_purchase_path, class: "purchase-main__delivery-info__container--change"
     .purchase-main__method
       .purchase-main__method__container
         %h3.purchase-main__method__container--title
@@ -40,6 +37,6 @@
           %br 09/19
         = image_tag "visa.svg", class: "purchase-main__method__container--image"
         %p.purchase-main__method__container--change
-          = link_to "変更する ＞", purchase_items_path
+          = link_to "変更する ＞", new_purchase_path
   = render partial: "items/footer"
     
