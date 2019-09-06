@@ -1,28 +1,81 @@
-= form_for @credit_card, url: done_signup_index_path, method: :post, html: {class: 'forth-main-wrapper__box'} do |f|
-  = f.number_field :card_number, placeholder: '半角数字のみ'
-  %select
-    %option ---
-    %option{value: "1"} 01
-    %option{value: "2"} 02
-    %option{value: "3"} 03
-    %option{value: "4"} 04
-    %option{value: "5"} 05
-    %option{value: "6"} 06
-    %option{value: "7"} 07
-    %option{value: "8"} 08
-    %option{value: "9"} 09
-    %option{value: "10"} 10
-    %option{value: "11"} 11
-    %option{value: "12"} 12
+.signup-wrapper
+  .signup-header
+    = image_tag "mercari-logo.svg", class: "signup-mercari-logo" 
+    = image_tag "新規登録-遷移図4.png", class: "signup-transition-diagram"
+    -# # 5ページ共通 ※ 遷移図の No. だけ変える(scssはstep1に記入)
+      
+  .signup-main4
+    .signup-main4__head 支払い方法
+    .a-4
+      .signup-main4__form__card-number
+        %p 
+          カード番号 
+          %span.signup-form-require 必須 
+      .signup-main4__form__card-number__input 半角数字のみ
+      = image_tag "credit-card-design.png", class: "credit-card-design" 
 
-  %select
-    %option ---
-    %option{value: "1"} 19
-    %option{value: "2"} 20
-    %option{value: "3"} 21
-    %option{value: "4"} 22
-    %option{value: "5"} 23
-    %option{value: "6"} 24
-    %option{value: "7"} 25
+      .signup-main4__form__expiration-date 
+        %p 
+          有効期限
+          %span.signup-form-require 必須
+      %select.signup-expiration-date-month-select 
+        %option ---
+        %option{value: "1"} 1		
+        %option{value: "2"} 2		
+        %option{value: "3"} 3		
+        %option{value: "4"} 4		
+        %option{value: "5"} 5		
+        %option{value: "6"} 6		
+        %option{value: "7"} 7		
+        %option{value: "8"} 8		
+        %option{value: "9"} 9		
+        %option{value: "10"} 10		
+        %option{value: "11"} 11		
+        %option{value: "12"} 12		
+      月
+      %select.signup-expiration-date-year-select 
+        %option ---
+        %option{value: "19"} 29
+        %option{value: "20"} 20
+        %option{value: "21"} 21
+        %option{value: "22"} 22
+        %option{value: "23"} 23
+        %option{value: "24"} 24
+      年
+    
+      .signup-main4__form__security-code
+        %p 
+          セキュリティコード
+          %span.signup-form-require 必須 
+      .signup-main4__form__security-code__input カード背面4桁もしくは3桁の番号
+      .signup-main2__form__sub-head__text 
+        %a 
+          ?
+        %span
+          カード裏面の番号とは？
 
-  = f.number_field :security_code, placeholder: 'カード背面4桁もしくは3桁の番号'
+      .signup-step4-submit 次へ進む
+    
+  .signup-footer
+
+
+
+
+  -#       .signup-main4__form
+  -#       = form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'third-wrapper__box'} do |f|
+
+
+
+
+
+
+
+
+
+  -# = form_for @credit_card, url: done_signup_index_path, method: :post, html: {class: 'forth-main-wrapper__box'} do |f|
+  -#   = f.number_field :card_number, placeholder: '半角数字のみ'
+  -#   %select
+  -#     %option ---
+  -#     %option{value: "1"} 01
+
+    

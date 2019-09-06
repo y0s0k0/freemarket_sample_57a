@@ -54,18 +54,23 @@ table {
     height: 128px;
     margin: 0 auto 10px;
     width: 1112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .signup-mercari-logo {
       float: left;
       height: 49px;
-      margin: 10px 0px 0px 90px;
-      padding: 40px 0px 0px 90px;
+      line-height: 49px;
+      // margin: 10px 0px 0px 90px;
+      // padding: 40px 0px 0px 90px;
       width: 185px;
     }
     .signup-transition-diagram {
       height: 42px;
-      margin: 0 auto;
-      padding: 40px 0px 0px 48px;
-      width: 506px;
+      margin: 0 30px 0 50px;
+      // margin: 0 auto;
+      // padding: 40px 0px 0px 48px;
+      // width: 506px;
     }
   }
   .signup-main {
@@ -80,8 +85,8 @@ table {
       font-size: 22px;
       font-weight: 550;
       height: 63px;
-      line-height: normal;
-      padding: 30px 0px 0px 0px;
+      line-height: 63px;
+      padding: 0px 0px 0px 0px;
       text-align: center;
       width: 700px;
       margin: 0 auto 0;
@@ -101,7 +106,7 @@ table {
         &__input {
           margin: 8px 0px 30px;
           width: 315px;
-          height: 28px;
+          
           border-radius: 4px;
           font-size: 16px;
           padding: 10px 16px 8px;
@@ -118,7 +123,7 @@ table {
         &__input {
           margin: 8px 0px 30px;
           width: 315px;
-          height: 28px;
+          
           border-radius: 4px;
           font-size: 16px;
           padding: 10px 16px 8px;
@@ -135,7 +140,7 @@ table {
         &__input {
           margin: 8px 0px 30px;
           width: 315px;
-          height: 28px;
+          
           border-radius: 4px;
           font-size: 16px;
           padding: 10px 16px 8px;
@@ -152,7 +157,7 @@ table {
         &__input {
           margin: 8px 0px 35px;
           width: 315px;
-          height: 28px;
+          
           border-radius: 4px;
           font-size: 16px;
           padding: 10px 16px 8px;
@@ -185,8 +190,8 @@ table {
 
         &__last-name-input {
           margin: 8px 8px 30px 0px;
-          width: 137.5px;
-          height: 28px;
+          width: 155px;
+          
           border-radius: 4px;
           font-size: 16px;
           padding: 10px 16px 8px;
@@ -194,8 +199,8 @@ table {
         }
         &__first-name-input {
           margin: 8px 8px 30px 0px;
-          width: 137.5px;
-          height: 28px;
+          width: 155px;
+          
           border-radius: 4px;
           font-size: 16px;
           padding: 10px 16px 8px;
@@ -210,34 +215,25 @@ table {
           font-size: 14px;
         }
       }
-        .signup-main__form__name-kana__inputbox {
-          display: flex;
+      .signup-main__form__name-kana__inputbox {
+        display: flex;
 
-          &__last-name-kana-input {
-            margin: 8px 8px 30px 0px;
-            width: 137.5px;
-            height: 28px;
-            border-radius: 4px;
-            font-size: 16px;
-            padding: 10px 16px 8px;
-            border: 1px solid #CCC;
-          }
-          &__first-name-kana-input {
-            margin: 8px 8px 30px 0px;
-            width: 137.5px;
-            height: 28px;
-            border-radius: 4px;
-            font-size: 16px;
-            padding: 10px 16px 8px;
-            border: 1px solid #CCC;
-          }
+        &__last-name-kana-input {
+          margin: 8px 8px 30px 0px;
+          width: 137.5px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
         }
-      .signup-birthday-year-select {
-        background-color: #FFFFFF;
-        font-size: 16px;
-        height: 48px;
-        width: 76px;
-        margin: 8px 0px 8px 0px;
+        &__first-name-kana-input {
+          margin: 8px 8px 30px 0px;
+          width: 137.5px;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border: 1px solid #CCC;
+        }
       }
       .signup-main__form__birthday {
         line-height: 17px;
@@ -246,6 +242,13 @@ table {
           font-weight: 600;
           font-size: 14px;
         }
+      }
+      .signup-birthday-year-select {
+        background-color: #FFFFFF;
+        font-size: 16px;
+        height: 48px;
+        width: 76px;
+        margin: 8px 0px 8px 0px;
       }
       .signup-birthday-month-select {
         background-color: #FFFFFF;

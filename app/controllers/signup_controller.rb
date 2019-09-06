@@ -1,5 +1,5 @@
 class SignupController < ApplicationController
-  before_action :set_credit_card, only: :step4
+  # before_action :set_credit_card, only: :step4
   # 各アクションごとに新規インスタンスを作成
   # 各アクションごとに、遷移元のページのデータをsessionに保管
   def step1
@@ -29,17 +29,17 @@ class SignupController < ApplicationController
 
   def step4
     # step3で入力された値をsessionに保存
-    session[:zip] = user_params[:zip]
-    session[:prefecture] = user_params[:prefecture]
-    session[:city] = user_params[:city]
-    session[:address] = user_params[:address]
-    session[:building] = user_params[:building]
+    # session[:zip] = user_params[:zip]
+    # session[:prefecture] = user_params[:prefecture]
+    # session[:city] = user_params[:city]
+    # session[:address] = user_params[:address]
+    # session[:building] = user_params[:building]
     # @user = User.new # 新規インスタンス作成
     # @user = @credit_card.user.
   end
 
   def done
-    sign_in User.find(session[:user_id]) unless user_signed_in?
+    # sign_in User.find(session[:user_id]) unless user_signed_in?
   end
 
   def create
@@ -94,7 +94,8 @@ class SignupController < ApplicationController
       :building, 
       :image,
       :introduction, 
-    ).merge(card_number: params[:card_number])
+    )
+    # .merge(card_number: params[:card_number])
   end
 
   # def set_credit_card
