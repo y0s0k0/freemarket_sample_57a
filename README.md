@@ -23,7 +23,6 @@
 |image|string||
 |introduction|string||
 
-
 ### Association
 - has_one :delivery_information
 - has_many :contacts
@@ -56,6 +55,7 @@
 ### Association
 - belongs_to :user
 
+
 ## contactsテーブル
 
 |Column|Type|Options|
@@ -78,36 +78,6 @@
 ### Association
 - belongs_to :user
 
-## moneyテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|money|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-
-## pointテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|point|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-
-
-## deposit_historiesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|money|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
 
 ## ratingテーブル
 
@@ -135,42 +105,6 @@
 ### Association
 - belongs_to :user
 
-## mercari_box_questionsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|contents|string|null: false|
-|category|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- has_many :mercari_box_messages
-
-## mercari_box_messagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|message|string|null: false|
-|question_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :mercari_box_qestions
-- belongs_to :user
-- has_many :mercari_box_sukkiris
-
-## mercari_box_sukkirisテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|message|string|null: false|
-|message_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :mercari_box_messages
-- belongs_to :user
 
 ## bankテーブル
 
@@ -205,15 +139,13 @@
 |transaction_condition|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
-
-
-
 ### Association
 - belongs_to :user
 - has_many :likes
 - has_many :messages
 - has_one :category
 - has_one :brand
+
 
 ## likeテーブル
 
@@ -225,6 +157,7 @@
 ### Association
 - belongs_to :item
 - belongs_to :user
+
 
 ## messageテーブル
 
@@ -238,6 +171,7 @@
 - belongs_to :item
 - belongs_to :user
 
+
 ## categoryテーブル
 
 |Column|Type|Options|
@@ -247,6 +181,7 @@
 
 ### Association
 - belongs_to :item
+
 
 ## brandテーブル
 

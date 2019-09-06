@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'home/search' => 'home#search'
   get 'home/exhibit_product/:id' => 'home#exhibit_product'
   delete  'home/:id'  => 'home#destroy'
-  resources :items,  only: [:new, :create, :edit, :update, :show]
+  resources :items, only: [:new, :create, :edit, :update, :show]
+　resources :purchase, only: [:new, :create]
   devise_for :users 
   resources :signup do
     collection do
