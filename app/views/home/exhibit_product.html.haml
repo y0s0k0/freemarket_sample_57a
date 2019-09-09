@@ -71,7 +71,8 @@
                 %th.item-show-main__container__info__detail__delivery__head
                   配送の方法
                 %td.item-show-main__container__info__detail__delivery__data
-                  %p.item-show-main__container__info__detail__delivery__data--top らくらくメルカリ便
+                  %p.item-show-main__container__info__detail__delivery__data--top
+                    =@item.postage
                   %span.item-show-main__container__info__detail__delivery__data--bottom 匿名配送
 
               %tr.item-show-main__container__info__detail__region
@@ -99,7 +100,7 @@
 
         %section.item-show-main__exhibit-button
           .item-show-main__comment-exhibit-button
-            =link_to "商品の編集" ,"#", class:"item-show-main__comment--button-exhibit item-show-main__comment--button-exhibit-red"
+            =link_to "商品の編集" ,edit_item_path, method: :get, class:"item-show-main__comment--button-exhibit item-show-main__comment--button-exhibit-red"
             %p or
             =link_to "出品を一旦停止する" ,"#", class:"item-show-main__comment--button-exhibit"
             =link_to "この商品を削除する" ,"/home/#{@item.id}", method: :delete, class:"item-show-main__comment--button-exhibit"
