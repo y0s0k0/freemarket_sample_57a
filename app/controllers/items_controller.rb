@@ -1,9 +1,16 @@
 class ItemsController < ApplicationController
+  # before_action :find_item, only: [:show, :edit, :update, :destroy]
+
   def new
     @item = Item.new
+    # 3.times{@item.item_images.build}
+    @item.item_images.build
   end
 
   def create
+    @item = Item.new(item_params)
+    
+    @item.save
   end
 
   def show
@@ -21,16 +28,21 @@ class ItemsController < ApplicationController
   end
 
   private
-    def item_params
-      params.require(:item).permit(:image, :name, :description, :category, :size, :brand, :condition, :postage, :region, :days, :price, :transaction_condition, :user_id)
-    end
 
-    def params_int(item_params)
-      item_params.each do |key,value|
-        if integer_string?(value)
-          item_params[key]=value.to_i
-        end
+  def find_item
+    @item = Item.find(params[:id])
+  end
+
+  def item_params
+    param.require.(:item).permit(:name, :description, :category, :condition, :postage, :region, :days, :price, item_image_attributes: [:item_id, :image])
+  end
+
+  def params_int(item_params)
+    item_params.each do |key,value|
+      if integer_string?(value)
+        item_params[key]=value.to_i
       end
+    end
   end
 
   def integer_string?(str)
