@@ -18,6 +18,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(params_int(item_params))
+    redirect_to "/home/exhibit_product/#{@item.id}"
   end
 
   private
@@ -29,6 +36,21 @@ class ItemsController < ApplicationController
   def item_params
     param.require.(:item).permit(:name, :description, :category, :condition, :postage, :region, :days, :price, item_image_attributes: [:item_id, :image])
   end
+
+  def params_int(item_params)
+    item_params.each do |key,value|
+      if integer_string?(value)
+        item_params[key]=value.to_i
+      end
+    end
+  end
+
+  def integer_string?(str)
+    Integer(str)
+    true
+  rescue ArgumentError
+    false
+ end
 
 end
 
