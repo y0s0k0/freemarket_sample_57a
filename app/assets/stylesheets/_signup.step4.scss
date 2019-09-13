@@ -57,10 +57,10 @@ table {
       background-color: #FFFFFF;
       border-bottom:#eee solid 1px;
       font-size: 22px;
-      font-weight: 600;
+      font-weight: 550;
       height: 63px;
-      line-height: normal;
-      padding: 30px 0px 0px 0px;
+      line-height: 63px;
+      padding: 0px 0px 0px 0px;
       text-align: center;
       width: 700px;
       margin: 0 auto 0;
@@ -92,27 +92,52 @@ table {
         width: 288.8px;
       }
       .signup-main4__form__expiration-date {
-        line-height: 17px;
         display: flex;
+        align-items: center;
         p {
           font-weight: 600;
           font-size: 14px;
           margin: 10px 0px 0px;
+          line-height: 21px;
+        }
+        span {
+          line-height: 17px;
         }
       }
-      .signup-expiration-date-month-select {
-        background-color: #FFFFFF;
+      .signup-expiration-info-select {
         font-size: 16px;
-        height: 48px;
-        width: 76px;
-        margin: 8px 3px 30px 0px;
-      }
-      .signup-expiration-date-year-select {
-        background-color: #FFFFFF;
-        font-size: 16px;
-        height: 48px;
-        width: 76px;
-        margin: 8px 3px 30px 6px;
+        display: flex;
+        justify-content: flex-start;
+        &__month {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          &__value {
+            background-color: #FFFFFF;
+            height: 48px;
+            width: 76px;
+            margin: 8px 3px 30px 0px;
+          }
+          &__text  {
+            line-height: 48px;
+            margin-bottom: 30px;
+          }
+        }
+        &__year {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          &__value {
+            background-color: #FFFFFF;
+            height: 48px;
+            width: 76px;
+            margin: 8px 3px 30px 6px;
+          }
+          &__text {
+            line-height: 48px;
+            margin-bottom: 30px;
+          }
+        }
       }
 
       .signup-main4__form__security-code {

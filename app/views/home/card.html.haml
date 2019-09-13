@@ -1,0 +1,25 @@
+= render partial: "header"
+- breadcrumb :profile
+= breadcrumbs separator: " &rsaquo; " ,class: "breadcrumb"
+.main
+  .main-contents
+    = render partial: "sidebar"
+    .main-contents__right--back-card
+      %h2　支払い方法
+      .card-block1 
+        %section
+          %h3 クレジットカード一覧
+          %li 
+            = image_tag "card-pre.png", class: "card-pre"
+            -# .card-block1__form
+            -# .card-block1__form__block
+            -#   .card-block1__form__image
+            -#   .card-block1__button
+            -#   .card-block1__form__number
+            -#   .card-block1__form__date
+
+
+        .card-block2 支払い方法について ＞
+  
+= render partial: "footer"
+= render partial: "camera"
