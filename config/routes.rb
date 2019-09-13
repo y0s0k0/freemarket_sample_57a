@@ -8,10 +8,13 @@ Rails.application.routes.draw do
   get 'home/list_exhibit' => 'home#list_exhibit'
   get 'home/search' => 'home#search'
   get 'home/exhibit_product/:id' => 'home#exhibit_product'
+  get 'home/card'  => 'home#card'
   delete  'home/:id'  => 'home#destroy'
   resources :items, only: [:new, :create, :edit, :update, :show]
-　resources :purchase, only: [:new, :create]
+  resources :purchase, only: [:new, :create]
   devise_for :users 
+  get '/signup' => 'signup#index'
+  get '/login' => 'login#index'
   resources :signup do
     collection do
       get 'step1'

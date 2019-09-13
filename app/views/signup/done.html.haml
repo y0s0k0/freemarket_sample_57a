@@ -12,8 +12,10 @@
           ありがとうございます。
         %p 
           会員登録が完了しました。
-      .signup-step5-submit メルカリをはじめる。
+      .signup-step5-submit 
+        = link_to root_path do
+          メルカリをはじめる。
     .a-5_2
       = image_tag "signup-フッタースクショ.png", class: "signup-footter-photo"
   
-  .signup-footer   
+  = render partial: "items/footer"

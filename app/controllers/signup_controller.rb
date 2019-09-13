@@ -2,6 +2,11 @@ class SignupController < ApplicationController
   # before_action :set_credit_card, only: :step4
   # 各アクションごとに新規インスタンスを作成
   # 各アクションごとに、遷移元のページのデータをsessionに保管
+  
+  def index
+
+  end
+  
   def step1
     @user = User.new # 新規インスタンス作成
   end
@@ -69,8 +74,8 @@ class SignupController < ApplicationController
     else
       render '/signup/registration'
     end
-  end 
-    
+  end  
+
   private
     # 許可するキーを設定
   def user_params
