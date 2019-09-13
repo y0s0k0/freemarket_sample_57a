@@ -19,9 +19,9 @@
 |prefecture|string|null: false|
 |city|string|null: false|
 |address|integer|null: false|
-|building|string||
-|image|string||
-|introduction|string||
+|building|string|
+|image|string|
+|introduction|string|
 
 ### Association
 - has_one :delivery_information
@@ -121,14 +121,14 @@
 ### Association
 - belongs_to :user
 
+
 ## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|title|string|null: false|
+|name|string|null: false|
 |image|string|null: false, foreign_key: true|
 |description|string|null: false|
-|category|integer|null: false|
 |size|integer||
 |brand|integer||
 |condition|integer|null: false|
@@ -143,8 +143,32 @@
 - belongs_to :user
 - has_many :likes
 - has_many :messages
-- has_one :category
+- has_many :images
 - has_one :brand
+- has_many :categories
+
+
+## categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|ancestry|integer|null: false|
+|item|references|null: false,foreign_key: true|
+
+### Association
+- belongs_to :item
+
+
+## imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|file_name|string|null: false|
+|user|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
 
 
 ## likeテーブル

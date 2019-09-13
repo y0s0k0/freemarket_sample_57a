@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get 'home/exhibit_product/:id' => 'home#exhibit_product'
   get 'home/card'  => 'home#card'
   delete  'home/:id'  => 'home#destroy'
-  resources :items, only: [:new, :create, :edit, :update, :show]
+  resources :items, only: [:new, :create, :edit, :update, :show] do
+    resources :item_image, only: :create
+  end
   resources :purchase, only: [:new, :create]
   devise_for :users 
   get '/signup' => 'signup#index'
