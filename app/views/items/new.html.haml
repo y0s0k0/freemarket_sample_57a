@@ -12,14 +12,13 @@
               必須
             %p 最大10枚までアップロードできます
           .exhibit-main__image-content__form__body
-            .exhibit-main__image-content__form__body__img-small
-              .exhibit-main__image-content__form__body__img-small__box#img_field
+            .exhibit-main__image-content__form__body__img-small#img_field
             .exhibit-main__image-content__form__body__img-large
               = img.label :image, class: "exhibit-main__image-content__form__body__img-large--label", for: "file" do
                 %h3
                   ドラッグアンドドロップ
                   %br またはクリックしてファイルをアップロード
-            = img.file_field :image, id: "file", class: "exhibit-main__image-content__form__body--file", multiple: true
+            = img.file_field :image, id: "file", class: "exhibit-main__image-content__form__body--file"
       .exhibit-main__description
         .exhibit-main__description__title
           %label
@@ -32,24 +31,19 @@
             %span 必須
           = f.text_area :description, placeholder: "商品の説明 (必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入してジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "exhibit-main__description__body__input"
       .exhibit-main__detail
-        %h3.exhibit-main__detail__title 商品の詳細
+        %h3.exhibit-main__detail__title
+          商品の詳細
         .exhibit-main__detail__input
-          .exhibit-main__detail__input__category
+          .exhibit-main__detail__input__category#category-box
             %label
               カテゴリー
               %span 必須
-            %select{appearance: "pull-down-menu"}
-              %option ---
-              %option レディース
-              %option メンズ
+            = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
           .exhibit-main__detail__input__state
             %label
               商品の状態
               %span 必須
-            %select
-              %option ---
-              %option 新品、未使用
-              %option 未使用に近い
+            = f.select :condition, Item.conditions.keys.map {|k| [I18n.t("enums.item.condition.#{k}"), k]}, prompt: "---"
       .exhibit-main__delivery-info
         %h3.exhibit-main__delivery-info__title
           配送について
@@ -59,27 +53,17 @@
             %label
               配送料の負担
               %span 必須
-            %select
-              %i.fas.fa-chevron-down
-              %option ---
-              %option 送料込み
-              %option 着払い
+            = f.select :postage, Item.postages.keys.map {|k| [I18n.t("enums.item.postage.#{k}"), k]}, prompt: "---"
           .exhibit-main__delivery-info__input__area
             %label
               発送元の地域
               %span 必須
-            %select
-              %option ---
-              %option 北海道
-              %option 青森県
+            = f.collection_select :region, Prefecture.all, :id, :name, prompt: "---"
           .exhibit-main__delivery-info__input__shipping-days
             %label
               発送までの日数
               %span 必須
-            %select
-              %option ---
-              %option 1〜2日で発送
-              %option 2〜3日で発送
+            = f.select :delivery_schedule, Item.delivery_schedules.keys.map {|k| [I18n.t("enums.item.delivery_schedule.#{k}"), k]}, prompt: "---"
       .exhibit-main__sell-price
         %h3.exhibit-main__sell-price__title
           販売価格(300〜9,999,999)
@@ -116,4 +100,3 @@
           = f.submit "出品する",  class: "exhibit-main__foot__btn--decision"
           = link_to "もどる", new_item_path, class: "exhibit-main__foot__btn--back"
   = render partial: "footer"
-

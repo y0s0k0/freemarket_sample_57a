@@ -45,4 +45,7 @@ class HomeController < ApplicationController
     @item.destroy
     redirect_to home_list_exhibit_path
   end
+
+  def card 
+  end
 end

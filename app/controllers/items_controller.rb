@@ -3,14 +3,17 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    # 3.times{@item.item_images.build}
     @item.item_images.build
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def create
     @item = Item.new(item_params)
-    
-    @item.save
+    if @item.save
+      redirect_to root_path
+    else
+      redirect_to new_item_path
+    end
   end
 
   def show
@@ -32,6 +35,14 @@ class ItemsController < ApplicationController
   def category
     @parents = Category.where(ancestry: nil)
   end
+  
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+        @children = Category.find(params[:parent_id]).children
+      end
+    end
 
   private
 
@@ -40,7 +51,16 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    param.require.(:item).permit(:name, :description, :category, :condition, :postage, :region, :days, :price, item_image_attributes: [:item_id, :image])
+    params.require(:item).permit(
+      :name,
+      :description,
+      :category,
+      :condition,
+      :postage,
+      :region,
+      :days,
+      :price,
+      item_images_attributes:[:item_id, :image])
   end
 
   def params_int(item_params)
@@ -56,7 +76,7 @@ class ItemsController < ApplicationController
     true
   rescue ArgumentError
     false
- end
+  end
 
 end
 

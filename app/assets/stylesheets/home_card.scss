@@ -1,0 +1,63 @@
+.main{
+  &-contents {
+    &__right{
+      &--back-card {
+        background-color: #fff;
+        width: 700px;
+        height: 368px;
+        
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 8px 24px;
+            text-align: center;
+            border-bottom: 1px solid #f5f5f5;
+            color: #333;
+            height:50px;
+            line-height: 30px;
+            width: 700px;
+        }
+        .card-block1 {
+          height:318px;
+          padding: 64px 64px;
+          width: 700px;
+            section {
+              border-bottom: 1px solid #f5f5f5;
+              height:133px;
+              width: 572px;
+                h3 {
+                  font-weight: bold;
+                  height:16px;
+                  margin: 0 auto;
+                  width: 320px;
+                }
+                li {
+                  height:117px;
+                  margin: 0 auto;
+                  width: 572px;
+                  .card-block1__form {
+                    height:68px;
+                    margin: 0 auto;
+                    width: 320px;
+                  }
+                  .card-pre {
+                    height:68px;
+                    margin: 20px 126px 0px;
+                    width: 320px;
+                  }
+                }
+            }
+            .card-block2 {
+              color: #0399E8;
+              height:16px;
+              margin: 40px 0px 0px;
+              width: 572px;
+              text-align: right;
+            }
+
+        }
+
+      }   
+    }     
+  }
+}
