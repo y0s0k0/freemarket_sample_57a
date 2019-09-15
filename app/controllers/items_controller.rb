@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params.merge(set_exhibit).merge(user_id: 1))
-    binding.pry
     if @item.save
       redirect_to root_path
     else
@@ -31,16 +30,31 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @image = ItemImage.find(params[:id])
   end
 
   def edit
     @item = Item.find(params[:id])
+    @image = ItemImage.find(params[:id])
   end
 
   def update
     @item = Item.find(params[:id])
     @item.update(params_int(item_params))
     redirect_to "/home/exhibit_product/#{@item.id}"
+  end
+
+  def category
+    @parents = Category.where(ancestry: nil)
+  end
+  
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+        @children = Category.find(params[:parent_id]).children
+      end
+    end
   end
 
   private
@@ -82,5 +96,6 @@ class ItemsController < ApplicationController
   end
 
 end
+
 
 

@@ -1,14 +1,14 @@
 .signup-wrapper
   .signup-header
     =image_tag "mercari-logo.svg", class: "signup-mercari-logo" 
-    = image_tag "新規登録-遷移図3.png", class: "signup-transition-diagram"
+    = image_tag "遷移図4分の3.png", class: "signup-transition-diagram"
   -# # 5ページ共通 ※ 遷移図の No. だけ変える(scssはstep1に記入)
     
   .signup-main3
     .signup-main3__head 住所入力
     .a-3
       .signup-main3__form
-      = form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'third-wrapper__box'} do |f|
+      = form_for @user, url: signup_index_path, method: :post, html: {class: 'third-wrapper__box'} do |f|
         .signup-main3__form__name 
           %p 
             お名前(全角) 
@@ -28,20 +28,12 @@
           %p 
             郵便番号
             %span.signup-form-require 必須 
-        = f.text_field :zip, placeholder: '例) 123-4567', class: "signup-main3__form__zip__input"
+        = f.text_field :zip, placeholder: '例) 0101717', class: "signup-main3__form__zip__input"
         .signup-main3__form__prefecture
           %p 
             都道府県
             %span.signup-form-require 必須
-        %select.signup-main3__form__prefecture__select
-          %option ---
-          %option{value: "1"} 北海道
-          %option{value: "2"} 青森県
-          %option{value: "3"} 秋田県
-          %option{value: "4"} 岩手県
-          %option{value: "5"} 山形県
-          %option{value: "6"} 福島県
-
+        = f.select :prefecture, [["北海道", "北海道"],["北海道", "北海道"], ["青森県", "青森県"]], {},  prompt: "---", class: "signup-main3__form__prefecture__select"
         .signup-main3__form__city
           %p
             市区町村

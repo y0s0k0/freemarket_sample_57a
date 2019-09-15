@@ -38,6 +38,11 @@ ActiveRecord::Schema.define(version: 20190915071039) do
     t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
   end
 
+  create_table "homes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "item_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image",      null: false
     t.integer  "item_id",    null: false
@@ -86,7 +91,7 @@ ActiveRecord::Schema.define(version: 20190915071039) do
     t.integer  "year",                                null: false
     t.integer  "month",                               null: false
     t.integer  "day",                                 null: false
-    t.integer  "phone_number",                        null: false
+    t.string   "phone_number",                        null: false
     t.integer  "zip",                                 null: false
     t.string   "prefecture",                          null: false
     t.string   "city",                                null: false
@@ -100,5 +105,8 @@ ActiveRecord::Schema.define(version: 20190915071039) do
 
   add_foreign_key "credit_cards", "users"
   add_foreign_key "item_images", "items"
+  add_foreign_key "purchases", "items"
+  add_foreign_key "purchases", "users"
   add_foreign_key "items", "categories"
+
 end
