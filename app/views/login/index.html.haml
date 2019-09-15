@@ -1,0 +1,57 @@
+.login-wrapper
+  .login-header
+    = image_tag "mercari-logo.svg", class: "login-mercari-logo" 
+    
+  .login-main
+    .login-main__head 
+      %p
+        アカウントをお持ちでない方はこちら
+      .login-main__head__button
+        = link_to step1_signup_index_path do
+          新規会員登録
+
+    .a
+      .login-main__button
+        .login-main__button__facebook
+          = link_to root_path do
+            Facebookでログイン
+            %i.fab.fa-facebook-square
+
+        .login-main__button__google
+          = link_to root_path do
+            Googleでログイン
+            %i.fab.fa-google
+
+      .login-main__form
+        .login-main__form__email
+        .login-main__form__password
+          
+        
+      .login-robot-box
+        = image_tag "iam_not_robot.png", class: "login-iam_not_robot" 
+        
+      .login-main__button__main
+        = link_to root_path do
+          ログイン
+
+      .login-main__text
+        %p 
+          パスワードをお忘れの方
+              
+
+  = render partial: "items/footer"
+
+
+
+
+
+
+  -# .login-main__form
+  -#     -# = form_for @user, url: step2_login_index_path, method: :get, html: {class: 'login-main__head__form'} do |f|
+  -#       .login-main__form__nickname 
+  -#         %p
+  -#           ニックネーム
+  -#           %span.login-form-require 必須
+  -#       = f.text_field :nickname, placeholder: '例) メルカリ太郎', class: "login-main__form__nickname__input" 
+
+

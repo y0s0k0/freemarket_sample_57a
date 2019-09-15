@@ -79,7 +79,7 @@ table {
         text-align: center;
         line-height: 20px;
         width: 343px;
-        margin: 0 auto 15px;
+        margin: 20px auto 15px;
         p {
           background-color: #FFFFFF;
           color: #333333;
@@ -88,7 +88,7 @@ table {
           text-align: center;
           line-height: 20px;
           width: 343px;
-          margin: 0 auto 10px;
+          margin: 0px auto 10px;
         }
         p {
           background-color: #FFFFFF;
@@ -101,14 +101,22 @@ table {
         }
       }
       .signup-step5-submit {
-        background-color: #EA352D;
-        color: #FFFFFF;
-        font-size: 14px;
+        background-color: #FFFFFF;
         height: 50px;
-        width: 350px;
-        margin: 60px 0px 0px;
+        width: 250px;
         text-align: center;
-        line-height: 50px;
+        margin: 30px auto 0px;
+        a {
+          background-color: #EA352D;
+          color: #FFFFFF;
+          display: inline-block;
+          font-size: 14px;
+          height: 50px;
+          width: 250px;
+          margin:50px 0px 0px;
+          text-align: center;
+          line-height: 50px;
+        }
       } 
     }
     .a-5_2 {

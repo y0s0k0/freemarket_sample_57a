@@ -18,30 +18,33 @@
         %p 
           有効期限
           %span.signup-form-require 必須
-      %select.signup-expiration-date-month-select 
-        %option ---
-        %option{value: "1"} 1		
-        %option{value: "2"} 2		
-        %option{value: "3"} 3		
-        %option{value: "4"} 4		
-        %option{value: "5"} 5		
-        %option{value: "6"} 6		
-        %option{value: "7"} 7		
-        %option{value: "8"} 8		
-        %option{value: "9"} 9		
-        %option{value: "10"} 10		
-        %option{value: "11"} 11		
-        %option{value: "12"} 12		
-      月
-      %select.signup-expiration-date-year-select 
-        %option ---
-        %option{value: "19"} 29
-        %option{value: "20"} 20
-        %option{value: "21"} 21
-        %option{value: "22"} 22
-        %option{value: "23"} 23
-        %option{value: "24"} 24
-      年
+      .signup-expiration-info-select
+        .signup-expiration-info-select__month
+          %select.signup-expiration-info-select__month__value
+            %option ---
+            %option{value: "1"} 1		
+            %option{value: "2"} 2		
+            %option{value: "3"} 3		
+            %option{value: "4"} 4		
+            %option{value: "5"} 5		
+            %option{value: "6"} 6		
+            %option{value: "7"} 7		
+            %option{value: "8"} 8		
+            %option{value: "9"} 9		
+            %option{value: "10"} 10		
+            %option{value: "11"} 11		
+            %option{value: "12"} 12		
+          %p.signup-expiration-info-select__month__text 月
+        .signup-expiration-info-select__year
+          %select.signup-expiration-info-select__year__value
+            %option ---
+            %option{value: "19"} 29
+            %option{value: "20"} 20
+            %option{value: "21"} 21
+            %option{value: "22"} 22
+            %option{value: "23"} 23
+            %option{value: "24"} 24
+          %p.signup-expiration-info-select__year__text 年
     
       .signup-main4__form__security-code
         %p 
@@ -56,7 +59,7 @@
 
       .signup-step4-submit 次へ進む
     
-  .signup-footer
+  = render partial: "items/footer"
 
 
 
