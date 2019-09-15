@@ -129,15 +129,16 @@
 |name|string|null: false|
 |image|string|null: false, foreign_key: true|
 |description|string|null: false|
+|category|references|null: false|
 |size|integer||
 |brand|integer||
-|condition|integer|null: false|
-|postage|integer|null: false|
+|condition|string|null: false|
+|postage|string|null: false|
 |region|integer|null: false|
-|delivery_schedule|integer|null: false|
+|delivery_schedule|string|null: false|
 |price|integer|null: false|
 |transaction_condition|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user

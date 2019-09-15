@@ -22,7 +22,7 @@
 
 .exhibit-main {
   width: 700px;
-  height: 2016px;
+  min-height: 2016px;
   background-color: #FFF;
   margin: 0 auto;
   h3 {
@@ -150,26 +150,42 @@
     }
   }
   &__detail {
-    height: 261px;
+    min-height: 261px;
     padding: 40px;
     border-top: 1px solid #F5F5F5;
+    display: flex;
+    justify-content: space-between;
     &__title {
-      float: left;
       color: #888;
     }
     &__input {
-      float: right;
-      select {
-        width: 400px;
-        height: 48px;
-        padding: 0 16px;
-        border: 1px solid #CCC;
-        display: block;
-        background-color: #FFF;
-        margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      &__category {
+        select {
+          width: 400px;
+          height: 48px;
+          padding: 0 16px;
+          border: 1px solid #CCC;
+          display: block;
+          background-color: #FFF;
+          margin-top: 8px;
+        }
       }
       &__state {
         margin-top: 40px;
+        select {
+          width: 400px;
+          height: 48px;
+          padding: 0 16px;
+          border: 1px solid #CCC;
+          display: block;
+          background-color: #FFF;
+          margin-top: 8px;
+        }
+      }
+      &__state:after {
+        content: "";
       }
     }
   }

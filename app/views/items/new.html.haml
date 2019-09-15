@@ -18,7 +18,7 @@
                 %h3
                   ドラッグアンドドロップ
                   %br またはクリックしてファイルをアップロード
-            = img.file_field :image, id: "file", class: "exhibit-main__image-content__form__body--file"
+            = img.file_field :image, id: "file", class: "exhibit-main__image-content__form__body--file", multiple: true, name: "item_images[image][]", accept: "image/*"
       .exhibit-main__description
         .exhibit-main__description__title
           %label
@@ -38,7 +38,7 @@
             %label
               カテゴリー
               %span 必須
-            = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+            = f.select :category_id, @category_parent_array, {}, {id: "parent-form"}
           .exhibit-main__detail__input__state
             %label
               商品の状態
@@ -75,13 +75,13 @@
               %span 必須
             %p.exhibit-main__sell-price__body__label__input
               ¥
-              = f.text_field :price, placeholder: "例)  300"
+              = f.text_field :price, placeholder: "例)  300", id: "exhibit-price"
           .exhibit-main__sell-price__body__fee
             %p 販売手数料(10%)
-            %p -
+            %p.exhibit-main__sell-price__body__fee__calc -
           .exhibit-main__sell-price__body__gain
             %p 販売利益
-            %p -
+            %p.exhibit-main__sell-price__body__gain__calc -
       .exhibit-main__foot
         %p.exhibit-main__foot__rules
           = link_to "禁止されている出品"
@@ -98,5 +98,5 @@
           また、出品をもちまして加盟店規約に同意したことになります。
         .exhibit-main__foot__btn
           = f.submit "出品する",  class: "exhibit-main__foot__btn--decision"
-          = link_to "もどる", new_item_path, class: "exhibit-main__foot__btn--back"
+          = link_to "もどる", root_path, class: "exhibit-main__foot__btn--back"
   = render partial: "footer"
