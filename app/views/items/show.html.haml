@@ -6,7 +6,7 @@
       = @item.name
       .item-show-main__container__info
         .item-show-main__container__info__image
-          = image_tag @item.image, class: "item-show-main__container__info__image--large"
+          = image_tag @image.image, class: "item-show-main__container__info__image--large"
           .item-show-main__container__info__image__small
             = image_tag "m59627988225_1.jpg", class: "item-show-main__container__info__image__small__upload"
             = image_tag "m59627988225_2.jpg", class: "item-show-main__container__info__image__small__upload"
@@ -34,15 +34,15 @@
             %td.item-show-main__container__info__detail__category__data
               %p
                 = link_to do
-                  =@item.category
+                  -# =@item.category
                 %br
                 = link_to do
                   >
-                  =@item.category
+                  -# =@item.category
                 %br
                 = link_to do
                   >
-                  =@item.category
+                  -# =@item.category
 
           %tr.item-show-main__container__info__detail__brand
             %th.item-show-main__container__info__detail__brand__head

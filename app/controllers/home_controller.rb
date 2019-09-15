@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
   def index
-    @index_item = Item.all.limit(10)
+    @index_item = Item.all.order("id DESC").limit(10)
+    @image = ItemImage.all.order("id DESC").limit(10)
     @item = Item.all
+    @parents = Category.where(ancestry: nil)
   end
 
   def mypage
@@ -18,7 +20,8 @@ class HomeController < ApplicationController
   end
 
   def list_exhibit
-    @item = Item.all
+    @item = Item.all.order("id DESC")
+    @image = ItemImage.all.order("id DESC")
   end
 
   def search
@@ -29,6 +32,12 @@ class HomeController < ApplicationController
 
   def exhibit_product
     @item = Item.find(params[:id])
+    @image = ItemImage.find(params[:id])
+    @parents = Category.find(params[:id])
+    @p = Category.find(params[:id]).item_id
+    @a = Category.find_by(item_id: @p,ancestry: nil)
+    @pp = Category.find_by(ancestry: nil)
+    # @b = @a.find_by(ancestry: nil)
   end
 
   def destroy
