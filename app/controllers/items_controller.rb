@@ -43,6 +43,7 @@ class ItemsController < ApplicationController
         @children = Category.find(params[:parent_id]).children
       end
     end
+  end
 
   private
 
@@ -79,5 +80,6 @@ class ItemsController < ApplicationController
   end
 
 end
+
 
 
