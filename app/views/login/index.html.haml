@@ -22,11 +22,29 @@
             Googleでログイン
             %i.fab.fa-google
 
-      .login-main__form
-        .login-main__form__email
-        .login-main__form__password
-          
+      .signup-main__form
+        .signup-main__form__email__input
+        = form_for @user,url: root_path  method: :get, html:  do |f|
+        = f.email_field :email, placeholder: 'メールアドレス', class: "signup-main__form__email__input" 
         
+        .signup-main__form__password__input
+        = f.password_field :password, placeholder: 'パスワード', class: "signup-main__form__password__input" 
+
+
+
+-# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+-#         .field
+-#           .field-label
+-#             = f.label :email
+-#           .field-input
+-#             = f.email_field :email, autofocus: true
+-#           .field
+-#             .field-label
+-#               = f.label :password
+-#               %i (英数字8文字以上)
+-#             .field-input
+-#               = f.password_field :password, autocomplete: "off"
+
       .login-robot-box
         = image_tag "iam_not_robot.png", class: "login-iam_not_robot" 
         

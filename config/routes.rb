@@ -16,13 +16,11 @@ Rails.application.routes.draw do
   resources :purchase, only: [:new, :create]
   devise_for :users 
   get '/signup' => 'signup#index'
-  get '/login' => 'login#index'
   resources :signup do
     collection do
       get 'step1'
       get 'step2'
-      get 'step3'
-      get 'step4' # ここで 入力の全てが終了
+      get 'step3' # ここで 入力の全てが終了
       get 'done' # 登録完了後のページに遷移
     end
   end

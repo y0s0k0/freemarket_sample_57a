@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190911014746) do
+ActiveRecord::Schema.define(version: 20190913060407) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "prefecture_id"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20190911014746) do
     t.integer  "year",                                null: false
     t.integer  "month",                               null: false
     t.integer  "day",                                 null: false
-    t.integer  "phone_number",                        null: false
+    t.string   "phone_number",                        null: false
     t.integer  "zip",                                 null: false
     t.string   "prefecture",                          null: false
     t.string   "city",                                null: false
@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 20190911014746) do
 
   add_foreign_key "categories", "items"
   add_foreign_key "credit_cards", "users"
+  add_foreign_key "item_images", "items"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
-  add_foreign_key "item_images", "items"
 end

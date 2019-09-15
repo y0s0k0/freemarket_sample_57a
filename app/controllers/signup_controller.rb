@@ -1,12 +1,15 @@
 class SignupController < ApplicationController
-  # before_action :set_credit_card, only: :step4
   # 各アクションごとに新規インスタンスを作成
   # 各アクションごとに、遷移元のページのデータをsessionに保管
   
   def index
 
   end
-  
+
+  def show
+
+  end
+
   def step1
     @user = User.new # 新規インスタンス作成
   end
@@ -22,6 +25,8 @@ class SignupController < ApplicationController
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
     session[:year] = user_params[:year]
+    session[:month] = user_params[:month]
+    session[:day] = user_params[:day]
     @user = User.new # 新規インスタンス作成
   end
 
@@ -29,25 +34,14 @@ class SignupController < ApplicationController
     # step2で入力された値をsessionに保存
     session[:phone_number] = user_params[:phone_number]
     @user = User.new # 新規インスタンス作成
-
-  end
-
-  def step4
-    # step3で入力された値をsessionに保存
-    # session[:zip] = user_params[:zip]
-    # session[:prefecture] = user_params[:prefecture]
-    # session[:city] = user_params[:city]
-    # session[:address] = user_params[:address]
-    # session[:building] = user_params[:building]
-    # @user = User.new # 新規インスタンス作成
-    # @user = @credit_card.user.
-  end
-
-  def done
-    # sign_in User.find(session[:user_id]) unless user_signed_in?
   end
 
   def create
+    # step3で入力された値をsessionに保存
+    session[:zip] = user_params[:zip]
+    session[:prefecture] = user_params[:prefecture]
+    session[:city] = user_params[:city]
+    session[:building] = user_params[:building]
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
@@ -64,17 +58,21 @@ class SignupController < ApplicationController
       zip: session[:zip],
       prefecture: session[:prefecture],
       city: session[:city],
-      address: session[:address],
       building: session[:building],
+      address: "a"
     )
     if @user.save
       # ログインするための情報を保管
         session[:user_id] = @user.id
         redirect_to done_signup_index_path
     else
-      render '/signup/registration'
+      render '/signup/step1'
     end
   end  
+
+  def done
+    sign_in User.find(session[:user_id]) unless user_signed_in?
+  end
 
   private
     # 許可するキーを設定
@@ -95,10 +93,7 @@ class SignupController < ApplicationController
       :zip,
       :prefecture, 
       :city,
-      :address,
-      :building, 
-      :image,
-      :introduction, 
+      :building
     )
     # .merge(card_number: params[:card_number])
   end
