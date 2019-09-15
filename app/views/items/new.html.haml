@@ -38,12 +38,12 @@
             %label
               カテゴリー
               %span 必須
-            = f.collection_select :category, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+            = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
           .exhibit-main__detail__input__state
             %label
               商品の状態
               %span 必須
-            = f.collection_select :condition, Item.conditions.keys.to_a, {}
+            = f.select :condition, Item.conditions.keys.map {|k| [I18n.t("enums.item.condition.#{k}"), k]}, prompt: "---"
       .exhibit-main__delivery-info
         %h3.exhibit-main__delivery-info__title
           配送について
@@ -53,17 +53,17 @@
             %label
               配送料の負担
               %span 必須
-            = f.collection_select :postage, Item.postages.keys.to_a
+            = f.select :postage, Item.postages.keys.map {|k| [I18n.t("enums.item.postage.#{k}"), k]}, prompt: "---"
           .exhibit-main__delivery-info__input__area
             %label
               発送元の地域
               %span 必須
-            = f.collection_select :prefecture_id, Prefecture.all, :region
+            = f.collection_select :region, Prefecture.all, :id, :name, prompt: "---"
           .exhibit-main__delivery-info__input__shipping-days
             %label
               発送までの日数
               %span 必須
-            = f.collection_select :days, Item.days.keys.to_a, {}
+            = f.select :delivery_schedule, Item.delivery_schedules.keys.map {|k| [I18n.t("enums.item.delivery_schedule.#{k}"), k]}, prompt: "---"
       .exhibit-main__sell-price
         %h3.exhibit-main__sell-price__title
           販売価格(300〜9,999,999)
