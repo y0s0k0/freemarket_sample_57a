@@ -1,0 +1,29 @@
+= render partial: "home/header"
+.bread
+  - breadcrumb :mypage
+  = breadcrumbs separator: " &rsaquo; ",class: "breadcrumb"
+.main
+  .main-contents
+    .main-contents-category
+      %h2 カテゴリー一覧
+      %ul.main-contents-category-p
+        - @parents.each do |parent|
+          %li.main-contents-category-parents
+            =link_to do
+              =parent.name
+
+      - @parents.each do |parent|
+        %h3.main-contents-category-genre
+          =parent.name
+        .main-contents-category-container
+          %ul.main-contents-category-list
+            - parent.children.each do |child|
+              %li.main-contents-category-list-child
+                .main-contents-category-list-child-text=child.name
+                .main-contents-category-list-g
+                  - child.children.each do |grandchild|
+                    .main-contents-category-list-grand
+                      =link_to do
+                        =grandchild.name
+= render partial: "home/footer"
+= render partial: "home/camera"
