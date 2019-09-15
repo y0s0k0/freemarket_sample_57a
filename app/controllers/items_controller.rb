@@ -4,11 +4,10 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.build
-    @parents = Category.all.order("id ASC").limit(13)
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def create
-    binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -50,6 +49,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(
       :name,
       :description,
+      :category,
       :condition,
       :postage,
       :region,

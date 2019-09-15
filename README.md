@@ -134,7 +134,7 @@
 |condition|integer|null: false|
 |postage|integer|null: false|
 |region|integer|null: false|
-|days|integer|null: false|
+|delivery_schedule|integer|null: false|
 |price|integer|null: false|
 |transaction_condition|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
