@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20190914074603) do
 
-
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "prefecture_id"
     t.string   "city"
@@ -96,7 +95,7 @@ ActiveRecord::Schema.define(version: 20190914074603) do
     t.integer  "year",                                null: false
     t.integer  "month",                               null: false
     t.integer  "day",                                 null: false
-    t.integer  "phone_number",                        null: false
+    t.string   "phone_number",                        null: false
     t.integer  "zip",                                 null: false
     t.string   "prefecture",                          null: false
     t.string   "city",                                null: false
@@ -109,8 +108,8 @@ ActiveRecord::Schema.define(version: 20190914074603) do
   end
 
   add_foreign_key "credit_cards", "users"
+  add_foreign_key "item_images", "items"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
-  add_foreign_key "item_images", "items"
-  add_foreign_key "items", "categories"
+　add_foreign_key "items", "categories"
 end

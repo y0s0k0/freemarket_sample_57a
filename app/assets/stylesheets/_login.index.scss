@@ -70,7 +70,7 @@ table {
   .login-main {
     background-color: #FFFFFF;
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    height: 731px;
+    height: 755px;
     margin: 0 auto 10px;
     width: 456px;
     &__head {
@@ -162,8 +162,8 @@ table {
         }
       }
 
-      .login-main__form {
-        &__email {
+      .signup-main__form {
+        &__email__input {
           height: 48px;
           margin: 8px 0px 30px;
           width: 328px;
@@ -173,7 +173,7 @@ table {
           padding: 10px 16px 8px;
           border: 1px solid #CCC;
         }
-        &__password {
+        &__password__input {
           height: 48px;
           margin: 8px 0px 30px;
           width: 328px;
@@ -195,7 +195,7 @@ table {
       }
 
       .login-main__button__main {
-        height: 76px;
+        height: 50px;
         width: 328px;
         a {  
           background-color: #EA352D;
