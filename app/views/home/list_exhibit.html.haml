@@ -22,12 +22,12 @@
       .main-contents__right-todo
       .main-contents__right-item
         %ul
-          - @item.each do |i|
+          - @item.each_with_index do |i,n|
             %li
               =link_to "/home/exhibit_product/#{i.id}" do
                 .main-contents__right-item-left 
                   %figure.main-contents__right-item-left-image
-                    =image_tag "#{i.image}"
+                    =image_tag "#{@image[n].image}"
                   .main-contents__right-item-left-text
                     %p= i.name
                     %i.far.fa-heart

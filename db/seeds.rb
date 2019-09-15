@@ -6,9 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 100.times do |index|
-#     Item.create(name: "タイトル#{index}", image: "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", description: "ブログの内容#{index}", category: "カテゴリー#{index}", size: "#{index}",brand: "#{index}", condition: "#{index}", postage: "#{index}", region: "#{index}", days: "#{index}", price: "#{index}", transaction_condition: "#{index}", user_id: "#{index}")
-#   end
+
+100.times do |index|
+    index= index+1
+    Item.create(name: "タイトル#{index}", description: "ブログの内容#{index}", size: "#{index}",brand: "#{index}", condition: 1.to_i, postage: 1.to_i, region: 1.to_i, days: 1.to_i, price: 1.to_i, transaction_condition: 1.to_i, user_id: 1.to_i)
+end
+
+100.times do |index|
+  index= index+1
+  ItemImage.create(image: "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061",item_id:"#{index}")
+end
 
 # レディース
 lady = Category.create(name: "レディース")

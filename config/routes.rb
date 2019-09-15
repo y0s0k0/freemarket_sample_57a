@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'home/exhibit_product/:id' => 'home#exhibit_product'
   get 'home/card'  => 'home#card'
   delete  'home/:id'  => 'home#destroy'
+  get 'items/category' => 'items#category'
   resources :items, only: [:new, :create, :edit, :update, :show] do
     resources :item_image, only: :create
   end

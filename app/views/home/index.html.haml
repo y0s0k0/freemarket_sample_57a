@@ -26,14 +26,14 @@
             =link_to 'もっと見る >'
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
-              - @index_item.each do |i|
+              - @index_item.each_with_index do |i,n|
                 =link_to "/items/#{i.id}" do
                   .item-container__wrapper-contents-parts-box
                     .item-container__wrapper-contents-parts-box-price-in
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
@@ -42,14 +42,14 @@
             =link_to 'もっと見る >'
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
-              - @index_item.each do |i|
+              - @index_item.each_with_index do |i,n|
                 =link_to "/items/#{i.id}" do
                   .item-container__wrapper-contents-parts-box
                     .item-container__wrapper-contents-parts-box-price-in
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
               
@@ -59,14 +59,14 @@
             =link_to 'もっと見る >'
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
-              - @index_item.each do |i|
+              - @index_item.each_with_index do |i,n|
                 =link_to "/items/#{i.id}" do
                   .item-container__wrapper-contents-parts-box
                     .item-container__wrapper-contents-parts-box-price-in
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
@@ -75,14 +75,14 @@
             =link_to 'もっと見る >'
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
-              - @index_item.each do |i|
+              - @index_item.each_with_index do |i,n|
                 =link_to "/items/#{i.id}" do
                   .item-container__wrapper-contents-parts-box
                     .item-container__wrapper-contents-parts-box-price-in
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
               
@@ -101,14 +101,14 @@
             =link_to 'もっと見る >'
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
-              - @index_item.each do |i|
+              - @index_item.each_with_index do |i,n|
                 =link_to "/items/#{i.id}" do
                   .item-container__wrapper-contents-parts-box
                     .item-container__wrapper-contents-parts-box-price-in
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
@@ -117,14 +117,14 @@
             =link_to 'もっと見る >'
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
-              - @index_item.each do |i|
+              - @index_item.each_with_index do |i,n|
                 =link_to "/items/#{i.id}" do
                   .item-container__wrapper-contents-parts-box
                     .item-container__wrapper-contents-parts-box-price-in
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name             
 
@@ -133,14 +133,14 @@
             =link_to 'もっと見る >'
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
-              - @index_item.each do |i|
+              - @index_item.each_with_index do |i,n|
                 =link_to "/items/#{i.id}" do
                   .item-container__wrapper-contents-parts-box
                     .item-container__wrapper-contents-parts-box-price-in
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
@@ -149,14 +149,14 @@
             =link_to 'もっと見る >'
           .item-container__wrapper-contents
             .item-container__wrapper-contents-parts
-              - @index_item.each do |i|
+              - @index_item.each_with_index do |i,n|
                 =link_to "/items/#{i.id}" do
                   .item-container__wrapper-contents-parts-box
                     .item-container__wrapper-contents-parts-box-price-in
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{i.image}", :width => "188" ,height: "188"
+                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
                             
