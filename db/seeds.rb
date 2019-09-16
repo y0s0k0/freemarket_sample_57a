@@ -345,3 +345,6 @@ others_8 = others.children.create(name: "事務/店舗用品")
 others_8.children.create([{name: "オフィス用品一般"},{name: "オフィス家具"},{name: "店舗用品"},{name: "OA機器"},{name: "ラッピング/包装"},{name: "その他"}])
 others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
+
+user = User.new(nickname: "test", email: "test@gmail.com", password: "testtest", last_name: "test", first_name: "test", last_name_kana: "test", first_name_kana: "test", year: 1900, month: 1, day: 1, phone_number: 1901234, zip: 1, prefecture: "test", city: "test", address: "test", building: "test")
+user.save!

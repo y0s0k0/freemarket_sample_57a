@@ -4,11 +4,22 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.build
-    @parents = Category.where(ancestry: nil).order("id ASC")
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+  end
+
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_name]}").children
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = Item.new(item_params.merge(set_exhibit).merge(user_id: 1))
     if @item.save
       redirect_to root_path
     else
@@ -55,13 +66,17 @@ class ItemsController < ApplicationController
     params.require(:item).permit(
       :name,
       :description,
-      :category,
+      :category_id,
       :condition,
       :postage,
       :region,
-      :days,
+      :delivery_schedule,
       :price,
       item_images_attributes:[:item_id, :image])
+  end
+  
+  def set_exhibit
+    {transaction_condition: 1}
   end
 
   def params_int(item_params)

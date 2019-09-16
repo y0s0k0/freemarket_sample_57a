@@ -24,7 +24,7 @@ $(function() {
   }
 
   var inputImage = document.getElementById("file");
-  var addImage = document.gneetElementById("img_field");
+  var addImage = document.getElementById("img_field");
   var outputImage = document.getElementById("add");
   var deleteTarget = document.getElementsByClassName(".exhibit-main__image-content__form__body__img-small__box");
   // var $deleteTarget = $(".exhibit-main__image-content__form__body__img-small__box");
