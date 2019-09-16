@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.build
-    # @parents = Category.where(ancestry: nil).order("id ASC")
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
