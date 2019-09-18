@@ -7,10 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# 100.times do |index|
-#     index= index+1
-#     Item.create(name: "タイトル#{index}", description: "ブログの内容#{index}", size: "#{index}",brand: "#{index}", condition: 1.to_i, postage: 1.to_i, region: 1.to_i, days: 1.to_i, price: 1.to_i, transaction_condition: 1.to_i, user_id: 1.to_i)
-# end
+100.times do |index|
+<<<<<<< HEAD
+=======
+    index= index+1
+    Item.create(name: "タイトル#{index}", description: "ブログの内容#{index}", size: "#{index}",brand: "#{index}", condition: 1.to_i, postage: 1.to_i, region: 1.to_i, days: 1.to_i, price: 1.to_i, transaction_condition: 1.to_i, user_id: 1.to_i)
+end
+
+100.times do |index|
+>>>>>>> parent of ae4246c... Merge pull request #29 from y0s0k0/category#2
+  index= index+1
+  Item.create(name: "タイトル#{index}", description: "ブログの内容#{index}", size: "#{index}",brand: "#{index}", condition: 1, postage: 1, region: 1, delivery_schedule: 1, price: 1, transaction_condition: 1)
+end
 
 # 100.times do |index|
 #   index= index+1
