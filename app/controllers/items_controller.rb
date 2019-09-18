@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def new
+    
     @item = Item.new
     @item_images = @item.item_images.build
     @category_parent_array = Category.where(ancestry: nil)
