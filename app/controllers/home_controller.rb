@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :move_to_index, except: :index
 
   def index
     @index_item = Item.all.order("id DESC").limit(10)
@@ -8,31 +9,43 @@ class HomeController < ApplicationController
   end
 
   def mypage
+    @user = current_user
   end
 
   def profile
+    @user = current_user
   end
 
-  def logout
+  def deliver_address
+    @user = current_user
+  end
+
+  def card_create
+    @user = current_user
+    # @credit_card = Credit_card.find(params[:id])
   end
 
   def card
     @user = current_user
     # @credit_card = Credit_card.find(params[:id])
+  end
 
   def identification
     @user = current_user
   end
-end
 
   def email_password
     @user = current_user
-
   end
 
   def identification
-
+    @user = current_user
   end
+
+  def logout
+  end 
+
+  
 
   def list_exhibit
     @item = Item.all.order("id DESC")
@@ -43,16 +56,12 @@ end
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
     @item_count = Item.where('name LIKE(?)', "%#{params[:keyword]}%").count
     @key = params[:keyword]
+    @image = ItemImage.all
   end
 
   def exhibit_product
     @item = Item.find(params[:id])
     @image = ItemImage.find(params[:id])
-    @parents = Category.find(params[:id])
-    @p = Category.find(params[:id]).item_id
-    @a = Category.find_by(item_id: @p,ancestry: nil)
-    @pp = Category.find_by(ancestry: nil)
-    # @b = @a.find_by(ancestry: nil)
   end
 
   def destroy
@@ -65,5 +74,4 @@ end
     def move_to_index
       redirect_to action: :index unless user_signed_in?
     end
-
   end
