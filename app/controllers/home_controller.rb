@@ -1,9 +1,6 @@
 class HomeController < ApplicationController
   before_action :move_to_index, except: :index
 
-
-
-
   def index
     @index_item = Item.all.order("id DESC").limit(10)
     @image = ItemImage.all.order("id DESC").limit(10)
