@@ -38,11 +38,11 @@
                 %td.item-show-main__container__info__detail__category__data
                   %p
                     = link_to do
-                      -# =@pp.name
+                      =@pp.name
                     %br
                     = link_to do
                       >
-                      -# =@pp.children.name
+                      =@pp.children.name
                     %br
                     = link_to do
                       >
@@ -59,20 +59,20 @@
                 %th.item-show-main__container__info__detail__condition__head
                   商品の状態
                 %td.item-show-main__container__info__detail__condition__data
-                  =@item.condition.to_i
+                  =@item.condition
 
               %tr.item-show-main__container__info__detail__charge
                 %th.item-show-main__container__info__detail__charge__head
                   配送料の負担
                 %td.item-show-main__container__info__detail__charge__data
-                  =@item.postage.to_i
+                  =@item.postage
 
               %tr.item-show-main__container__info__detail__delivery
                 %th.item-show-main__container__info__detail__delivery__head
                   配送の方法
                 %td.item-show-main__container__info__detail__delivery__data
                   %p.item-show-main__container__info__detail__delivery__data--top
-                    =@item.postage.to_i
+                    =@item.postage
                   %span.item-show-main__container__info__detail__delivery__data--bottom 匿名配送
 
               %tr.item-show-main__container__info__detail__region
@@ -86,7 +86,7 @@
                 %th.item-show-main__container__info__detail__shipping__head
                   発送の目安
                 %td.item-show-main__container__info__detail__shipping__data
-                  =@item.delivery_schedule
+                  =@item.days
           .item-show-main__container__price
             %span.item-show-main__container__price--left
               ¥

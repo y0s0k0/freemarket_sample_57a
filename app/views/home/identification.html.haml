@@ -13,51 +13,38 @@
             =link_to "本人確認書類のアップロードについて", class: "main-contents__right--identification-section-upload-about-in"
             %i.fas.fa-chevron-right
         .main-contents__right--identification-section-form
-          %label お名前
-          %p
-            = @user.last_name
-            = @user.first_name
+          %label 名前
+          %p メルカリ太郎
         .main-contents__right--identification-section-form
           %label お名前カナ
-          %p 
-            = @user.last_name_kana
-            = @user.first_name_kana
+          %p メルカリタロウ
         .main-contents__right--identification-section-form
           %label 生年月日
-          %p 
-            = @user.year
-            ,
-            = @user.month
-            ,
-            = @user.day
+          %p 1991/08/08
         .main-contents__right--identification-section-form
           %label 郵便番号
           %span 任意
-          %input{value: @user.zip }
+          %input{placeholder: "例）1234567"}
         .main-contents__right--identification-section-form
           %label 都道府県
           %span 任意
-          = form_for @user.prefecture, method: :post do |f|
-            = f.select :prefecture, [["---", "---"], ["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"], ["長野県", "長野県"], ["岐阜県", "岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["兵庫県", "兵庫県"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"], ["岡山県", "岡山県"], ["広島県", "広島県"], ["山口県", "山口県"], ["徳島県", "徳島県"], ["香川県", "香川県"], ["愛媛県", "愛媛県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"], ["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮崎県", "宮崎県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"]], {},  prompt: "---", class: "signup-main3__form__prefecture__select",selected: @user.prefecture
-
-
-          -# =form_for Prefecture.name do |f|
-          -#   = f.collection_select(:prefecture_id, Prefecture.all, :id, :name)
+          =form_for Prefecture.name do |f|
+            = f.collection_select(:prefecture_id, Prefecture.all, :id, :name)
         .main-contents__right--identification-section-form
           %label 市区町村
           %span 任意
-          %input{value: @user.city }
+          %input{placeholder: "例) 横浜市緑区"}
         .main-contents__right--identification-section-form
           %label 番地
           %span 任意
-          %input{value: @user.address }
+          %input{placeholder: "例) 青山1−1−1"}
         .main-contents__right--identification-section-form
           %label 建物名
           %span 任意
-          %input{value: @user.building }
+          %input{placeholder: "例) 柳ビル103"}
         .main-contents__right-item
           %p
-            =link_to "登録する",home_mypage_path, class: "main-contents__right-item-registration"
+            =link_to "登録する","#", class: "main-contents__right-item-registration"
         .main-contents__right--identification-section-upload-about
           =link_to "本人情報の登録について", class: "main-contents__right--identification-section-upload-about-in"
           %i.fas.fa-chevron-right

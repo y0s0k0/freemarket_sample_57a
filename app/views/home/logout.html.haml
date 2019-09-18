@@ -7,6 +7,6 @@
     .main-contents__right--logout
       .main-contents__right-logout-button
         %p
-          = link_to "ログアウト", destroy_user_session_path, method: "delete", class: "main-contents__right-item-logout"
+          =link_to "ログアウト","#", class: "main-contents__right-item-logout"
 = render partial: "footer"
 = render partial: "camera"
