@@ -11,6 +11,16 @@
     
     .header__container-under
       .header__container-under--left
+
+        %ul
+          %li
+            %i.fas.fa-list-ul
+            =link_to 'カテゴリーから探す',items_category_path,class:".header__container-under--left-link"
+          %li
+            %i.fas.fa-tag
+            =link_to 'ブランドから探す','#'
+
+
         %li
           %i.fas.fa-list-ul
           =link_to 'カテゴリーから探す',items_category_path,class:".header__container-under--left-link"
@@ -28,4 +38,3 @@
           %li
             =link_to 'ログイン', new_user_session_path, class: "header_login_button"
             =link_to '新規会員登録', signup_path, class: "header_signup_button"   
-

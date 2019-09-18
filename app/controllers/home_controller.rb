@@ -36,20 +36,12 @@ class HomeController < ApplicationController
 
   def email_password
     @user = current_user
-
-  end
-
-  def identification
-
-  end
-
-  def email_password
-    @user = current_user
   end
 
   def identification
     @user = current_user
   end
+
 
   def logout
   end 
@@ -65,16 +57,12 @@ class HomeController < ApplicationController
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
     @item_count = Item.where('name LIKE(?)', "%#{params[:keyword]}%").count
     @key = params[:keyword]
+    @image = ItemImage.all
   end
 
   def exhibit_product
     @item = Item.find(params[:id])
     @image = ItemImage.find(params[:id])
-    @parents = Category.find(params[:id])
-    @p = Category.find(params[:id]).item_id
-    @a = Category.find_by(item_id: @p,ancestry: nil)
-    @pp = Category.find_by(ancestry: nil)
-    # @b = @a.find_by(ancestry: nil)
   end
 
   def destroy
@@ -84,6 +72,7 @@ class HomeController < ApplicationController
   end
 
   private
+
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?

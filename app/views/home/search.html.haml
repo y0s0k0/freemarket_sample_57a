@@ -1,7 +1,7 @@
 = render partial: "header"
 .main.result
   .main-contents
-    = render partial: "sidebar_item"
+    = render partial: "sidebar"
     .main-contents__right
       -if @item_count > 0
         %h2.main-contents__right-result
@@ -16,7 +16,7 @@
           の検索結果
         %p.main-contents__right-figure 該当する商品が見つかりません。検索条件を変えて、再度お試しください。
       .item-container__wrapper-contents-parts
-        - @items.each do |i|
+        - @items.each_with_index do |i,n|
           =link_to "/items/#{i.id}" do
             .item-container__wrapper-contents-parts-box-search
               .item-container__wrapper-contents-parts-box-search-price-in

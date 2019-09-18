@@ -58,13 +58,13 @@
             %th.item-show-main__container__info__detail__condition__head
               商品の状態
             %td.item-show-main__container__info__detail__condition__data
-              =@item.condition
+              =@item.condition.to_i
 
           %tr.item-show-main__container__info__detail__charge
             %th.item-show-main__container__info__detail__charge__head
               配送料の負担
             %td.item-show-main__container__info__detail__charge__data
-              =@item.postage
+              =@item.postage.to_i
 
           %tr.item-show-main__container__info__detail__delivery
             %th.item-show-main__container__info__detail__delivery__head
@@ -84,7 +84,7 @@
             %th.item-show-main__container__info__detail__shipping__head
               発送の目安
             %td.item-show-main__container__info__detail__shipping__data
-              =@item.days
+              =@item.delivery_schedule
       .item-show-main__container__price
         %span.item-show-main__container__price--left
           ¥
