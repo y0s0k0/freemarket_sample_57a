@@ -324,3 +324,10 @@ table {
 }
 
 
+
+
+// バリデーションによるエラー検知後の画面 
+.field_with_errors {
+  display:inline-block;
+}
+

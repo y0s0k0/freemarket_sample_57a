@@ -1,4 +1,9 @@
 class HomeController < ApplicationController
+  before_action :move_to_index, except: :index
+
+
+
+
   def index
     @index_item = Item.all.order("id DESC").limit(10)
     @image = ItemImage.all.order("id DESC").limit(10)
@@ -7,17 +12,39 @@ class HomeController < ApplicationController
   end
 
   def mypage
+    @user = current_user
   end
 
   def profile
+    @user = current_user
   end
 
-  def logout
+  def deliver_address
+    @user = current_user
+  end
+
+  def card_create
+    @user = current_user
+    # @credit_card = Credit_card.find(params[:id])
+  end
+
+  def card
+    @user = current_user
+    # @credit_card = Credit_card.find(params[:id])
+  end
+
+  def email_password
+    @user = current_user
   end
 
   def identification
-
+    @user = current_user
   end
+
+  def logout
+  end 
+
+  
 
   def list_exhibit
     @item = Item.all.order("id DESC")
@@ -46,6 +73,8 @@ class HomeController < ApplicationController
     redirect_to home_list_exhibit_path
   end
 
-  def card 
+  private
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end

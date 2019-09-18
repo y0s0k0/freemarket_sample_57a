@@ -71,8 +71,12 @@ ActiveRecord::Schema.define(version: 20190915071039) do
   end
 
   create_table "purchases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",    null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_purchases_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_purchases_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -105,8 +109,7 @@ ActiveRecord::Schema.define(version: 20190915071039) do
 
   add_foreign_key "credit_cards", "users"
   add_foreign_key "item_images", "items"
+  add_foreign_key "items", "categories"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
-  add_foreign_key "items", "categories"
-
 end
