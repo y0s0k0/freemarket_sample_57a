@@ -8,8 +8,8 @@
 
 
 100.times do |index|
-    index= index+1
-    Item.create(name: "タイトル#{index}", description: "ブログの内容#{index}", size: "#{index}",brand: "#{index}", condition: 1, postage: 1, region: 1, delivery_schedule: 1, price: 1, transaction_condition: 1, user_id: 1)
+  index= index+1
+  Item.create(name: "タイトル#{index}", description: "ブログの内容#{index}", size: "#{index}",brand: "#{index}", condition: 1, postage: 1, region: 1, delivery_schedule: 1, price: 1, transaction_condition: 1)
 end
 
 100.times do |index|
