@@ -19,6 +19,15 @@ class HomeController < ApplicationController
   def card
     @user = current_user
     # @credit_card = Credit_card.find(params[:id])
+
+  def identification
+    @user = current_user
+  end
+end
+
+  def email_password
+    @user = current_user
+
   end
 
   def identification
