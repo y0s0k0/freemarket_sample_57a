@@ -7,6 +7,12 @@
 //   });
 // });
 
+
+
+
+
+
+
 $(function() {
   function addPreview(i, image) {
     var html = `<div class="exhibit-main__image-content__form__body__img-small__box" id="image_num${i}">
@@ -27,10 +33,10 @@ $(function() {
   var addImage = document.getElementById("img_field");
   var outputImage = document.getElementById("add");
   var deleteTarget = document.getElementsByClassName(".exhibit-main__image-content__form__body__img-small__box");
-  // var $deleteTarget = $(".exhibit-main__image-content__form__body__img-small__box");
   
   $(inputImage).on("change", function(e) {
     var files = document.getElementById("file").files.length;
+    var file = document.getElementById("file").files[0];
     for(var i = 0; i < files; i++) {
       var file = e.target.files[i];
       var reader = new FileReader();
@@ -44,13 +50,16 @@ $(function() {
   });
 
   $(addImage).on("click", ".delete-btn", function() {
-    // $(this).parents(deleteTarget).remove();
     $(this).parent().parent().parent().remove();
 
-    // $(this).parents(".exhibit-main__image-content__form__body__img-small__box").remove();
-    // $(this).parent(".exhibit-main__image-content__form__body__img-small__box").remove();
   });
 });
+
+
+
+
+
+
 
 // $(function() {
 //   Dropzone.autoDiscover = false;
