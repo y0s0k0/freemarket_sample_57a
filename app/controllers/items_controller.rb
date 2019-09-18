@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  # before_action :find_item, only: [:show, :edit, :update, :destroy]
 
   def new
     @item = Item.new
@@ -79,7 +78,7 @@ class ItemsController < ApplicationController
       :region,
       :delivery_schedule,
       :price,
-      item_images_attributes: [:name])
+      item_images_attributes: [:name]).merge(seller_id: current_user.id)
   end
 
   def image_params

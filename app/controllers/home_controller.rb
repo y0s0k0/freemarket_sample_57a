@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
     @index_item = Item.all.order("id DESC").limit(10)
     @image = ItemImage.all.order("id DESC").limit(10)
