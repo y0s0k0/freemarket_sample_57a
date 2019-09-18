@@ -11,11 +11,18 @@
     
     .header__container-under
       .header__container-under--left
-        %li
-          %i.fas.fa-list-ul
-          =link_to 'カテゴリーから探す',items_category_path,class:".header__container-under--left-link"
-          %i.fas.fa-tag
-          =link_to 'ブランドから探す','#'
+
+
+        %ul
+          %li
+            %i.fas.fa-list-ul
+            =link_to 'カテゴリーから探す',items_category_path,class:".header__container-under--left-link"
+          %li
+            %i.fas.fa-tag
+            =link_to 'ブランドから探す','#'
+
+
+
       .header__container-under--right
         -if user_signed_in?
           %li
