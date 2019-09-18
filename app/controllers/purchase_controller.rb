@@ -1,12 +1,11 @@
 class PurchaseController < ApplicationController
   
-  def new
+  def edit
     @user = User.find_by(id: current_user_id)
     @item = Item.find(params[:id])
-    # @credit_card = 
   end
 
-  def create
+  def update
     @item = Item.find(params[:id]).merge(set_during_trading)
     if @item.save
       redirect_to home_mypage_path
@@ -21,7 +20,7 @@ class PurchaseController < ApplicationController
     params.require(:item).permit(
       :name,
       :price,
-      item_images_attributes:[:item_id, :image])
+      item_images_attributes:[:item_id, :image]).merge(buyer_id: current_user.id)
   end
 
   def set_during_trading
