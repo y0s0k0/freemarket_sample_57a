@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'home/search' => 'home#search'
   get 'home/exhibit_product/:id' => 'home#exhibit_product'
   get 'home/card_create'  => 'home#card_create'
+  get 'items/exhibit_product/:id' => 'itmes#exhibit_product'
   get 'home/card'  => 'home#card'
   delete  'home/:id'  => 'home#destroy'
   get 'items/category' => 'items#category'

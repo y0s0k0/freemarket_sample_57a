@@ -31,12 +31,12 @@ $(function() {
   
   $("#parent-form").on("change", function() {
     var parentValue = document.getElementById("parent-form").value;
-    if (parentValue !== ""){
+    if (parentValue !== "---"){
       $.ajax({
         url: "get_category_children",
         type: "GET",
         data: {
-          parent_id: parentValue
+          parent_name: parentValue
         },
         dataType: "json"
       })
@@ -61,11 +61,10 @@ $(function() {
   $(".exhibit-main__detail__input__category").on("change", "#child-category", function() {
     var childValue = $("#child-category option:selected").data("category");
     if (childValue != "---") {
-      // debugger
       $.ajax({
         url: "get_category_grandchildren",
         type: "GET",
-        data: { child_id: childValue },
+        data: { child_name: childValue },
         dataType: "json"
       })
       .done(function(grandchildren) {

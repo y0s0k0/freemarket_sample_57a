@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190915071039) do
+ActiveRecord::Schema.define(version: 20190918062821) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "prefecture_id"
@@ -62,12 +62,15 @@ ActiveRecord::Schema.define(version: 20190915071039) do
     t.string   "delivery_schedule",     null: false
     t.integer  "price",                 null: false
     t.integer  "transaction_condition"
-    t.integer  "user_id",               null: false
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "category_id"
+    t.integer  "seller_id"
+    t.integer  "buyer_id"
+    t.index ["buyer_id"], name: "fk_rails_bac2cf3aef", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["name"], name: "index_items_on_name", using: :btree
+    t.index ["seller_id"], name: "fk_rails_62a5ac8242", using: :btree
   end
 
   create_table "purchases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -96,7 +99,7 @@ ActiveRecord::Schema.define(version: 20190915071039) do
     t.integer  "month",                               null: false
     t.integer  "day",                                 null: false
     t.string   "phone_number",                        null: false
-    t.integer  "zip",                                 null: false
+    t.string   "zip",                                 null: false
     t.string   "prefecture",                          null: false
     t.string   "city",                                null: false
     t.string   "address",                             null: false
@@ -110,6 +113,8 @@ ActiveRecord::Schema.define(version: 20190915071039) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "categories"
+  add_foreign_key "items", "users", column: "buyer_id"
+  add_foreign_key "items", "users", column: "seller_id"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
 end
