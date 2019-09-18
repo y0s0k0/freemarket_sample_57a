@@ -1,20 +1,24 @@
 .exhibit-wrapper
   = render partial: "header"
   %main.exhibit-main
-    = form_for @item do |f|
-      .exhibit-main__head
-        %h2 商品の情報を入力
-      .exhibit-main__image-content
-        .exhibit-main__image-content__title
-          %h3 出品画像
-          %span
-            必須
-          %p 最大10枚までアップロードできます
-          .exhibit-main__image-content__body
-            = f.file_field :image, class: "exhibit-main__image-content__body__file"
-            %pre
-              ドラッグアンドドロップ
-              またはクリックしてファイルをアップデート
+    .exhibit-main__head
+      %h2 商品の情報を入力
+    = form_for @item do |f|{class: "exhibit-main__image-content"}
+      .exhibit-main__image-content__form
+        = f.fields_for :item_images do |img|
+          .exhibit-main__image-content__form--title
+            %h3 出品画像
+            %span
+              必須
+            %p 最大10枚までアップロードできます
+          .exhibit-main__image-content__form__body
+            .exhibit-main__image-content__form__body__img-small#img_field
+            .exhibit-main__image-content__form__body__img-large
+              = img.label :image, class: "exhibit-main__image-content__form__body__img-large--label", for: "file" do
+                %h3
+                  ドラッグアンドドロップ
+                  %br またはクリックしてファイルをアップロード
+            = img.file_field :image, id: "file", class: "exhibit-main__image-content__form__body--file", multiple: true, name: "item_images[image][]", accept: "image/*"
       .exhibit-main__description
         .exhibit-main__description__title
           %label
@@ -27,21 +31,19 @@
             %span 必須
           = f.text_area :description, placeholder: "商品の説明 (必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入してジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "exhibit-main__description__body__input"
       .exhibit-main__detail
-        %h3.exhibit-main__detail__title 商品の詳細
+        %h3.exhibit-main__detail__title
+          商品の詳細
         .exhibit-main__detail__input
-          .exhibit-main__detail__input__category
+          .exhibit-main__detail__input__category#category-box
             %label
               カテゴリー
               %span 必須
-            -# = f.select :category, Item.categories.keys.to_a, {}
-            -# = f.select :category, [["---", "0"],["レディース", "1"], ["メンズ", "2"],["ベビー・キッズ", "3"],["インテリア・住まい・小物", "4"],["本・音楽・ゲーム", "5"],["おもちゃ・ホビー・グッズ", "6"],["コスメ・香水・美容", "7"],["家電・スマホ・カメラ", "8"],["スポーツ・レジャー", "9"],["ハンドメイド", "10"],["チケット", "11"],["自動車・オートバイ", "12"],["その他", "13"]] ,class:"form-control"
-
+            = f.select :category_id, @category_parent_array, {}, {id: "parent-form"}
           .exhibit-main__detail__input__state
             %label
               商品の状態
               %span 必須
-              = f.select :condition, Item.conditions.keys.to_a, {}
-            -# = f.select :condition, [["---", "0"],["新品、未使用", "1"], ["未使用に近い", "2"],["目立った傷や汚れなし", "3"],["やや傷や汚れあり", "4"],["傷や汚れあり", "5"],["全体的に状態が悪い", "6"]] ,class:"form-control"
+            = f.select :condition, Item.conditions.keys.map {|k| [I18n.t("enums.item.condition.#{k}"), k]}, prompt: "---"
       .exhibit-main__delivery-info
         %h3.exhibit-main__delivery-info__title
           配送について
@@ -51,22 +53,17 @@
             %label
               配送料の負担
               %span 必須
-            = f.select :postage, Item.postages.keys.to_a, {}
-            -# = f.select :postage, [["---", "0"],["送料込み(出品者負担)", "1"], ["着払い(購入者負担)", "2"]] ,class:"form-control"
-
+            = f.select :postage, Item.postages.keys.map {|k| [I18n.t("enums.item.postage.#{k}"), k]}, prompt: "---"
           .exhibit-main__delivery-info__input__area
             %label
               発送元の地域
               %span 必須
-            = f.select :region, Item.regions.keys.to_a, {}
-            -# = f.select :region, [["---", "0"],["北海道", "1"], ["青森県", "2"],["岩手県", "3"],["宮城県", "4"],["秋田県", "5"],["山形県", "6"],["福島県", "7"], ["茨城県", "8"],["栃木県", "9"],["群馬県", "10"],["埼玉県", "11"],["千葉県", "12"],["東京都", "13"],["神奈川県", "14"],["新潟県", "15"],["富山県", "16"],["石川県", "17"],["福井県", "18"],["山梨県", "19"],["長野県", "20"], ["岐阜県", "21"],["静岡県", "22"],["愛知県", "23"],["三重県", "24"],["滋賀県", "25"],["京都府", "26"],["大阪府", "27"],["兵庫県", "28"],["奈良県", "29"],["和歌山県", "30"],["鳥取県", "31"],["島根県", "32"],["岡山県", "33"], ["広島県", "34"],["山口県", "35"],["徳島県", "36"],["香川県", "37"],["愛媛県", "38"],["高知県", "39"],["福岡県", "40"],["佐賀県", "41"],["長崎県", "42"],["熊本県", "43"],["大分県", "44"],["宮崎県", "45"],["鹿児島県", "46"], ["沖縄県", "47"],["未定", "48"]] ,class:"form-control"
+            = f.collection_select :region, Prefecture.all, :id, :name, prompt: "---"
           .exhibit-main__delivery-info__input__shipping-days
             %label
               発送までの日数
               %span 必須
-            = f.select :days, Item.days.keys.to_a, {}
-
-            -# = f.select :days, [["---", "0"],["1~2日で発送", "1"], ["2~3日で発送", "2"],["4~7日で発送", "3"]] ,class:"form-control"
+            = f.select :delivery_schedule, Item.delivery_schedules.keys.map {|k| [I18n.t("enums.item.delivery_schedule.#{k}"), k]}, prompt: "---"
       .exhibit-main__sell-price
         %h3.exhibit-main__sell-price__title
           販売価格(300〜9,999,999)
@@ -78,15 +75,13 @@
               %span 必須
             %p.exhibit-main__sell-price__body__label__input
               ¥
-              = f.text_field :price, placeholder: "例)  300"
+              = f.text_field :price, placeholder: "例)  300", id: "exhibit-price"
           .exhibit-main__sell-price__body__fee
             %p 販売手数料(10%)
-            %p
-              =(@item.price*0.1).floor
+            %p.exhibit-main__sell-price__body__fee__calc -
           .exhibit-main__sell-price__body__gain
             %p 販売利益
-            %p
-              =@item.price - (@item.price*0.1).floor
+            %p.exhibit-main__sell-price__body__gain__calc -
       .exhibit-main__foot
         %p.exhibit-main__foot__rules
           = link_to "禁止されている出品"
@@ -103,6 +98,5 @@
           また、出品をもちまして加盟店規約に同意したことになります。
         .exhibit-main__foot__btn
           = f.submit "出品する",  class: "exhibit-main__foot__btn--decision"
-          = link_to "もどる", new_item_path, class: "exhibit-main__foot__btn--back"
+          = link_to "もどる", root_path, class: "exhibit-main__foot__btn--back"
   = render partial: "footer"
-
