@@ -17,17 +17,17 @@ class ItemsController < ApplicationController
 
   def create
     # @item = Item.new(item_params.merge(set_exhibit).merge(user_id: 1))
-    @item = Item.new(item_params.merge(set_exhibit).merge(user_id: 1))
+    @item = Item.new(item_params.merge(set_exhibit).merge(seller_id: 1))
     @category_parent_array = []
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
 
-    binding.pry
+    
     if @item.save
-      params[:item_images]["name"].each do |img|
-        @item_image = @item.item_images.create!(name: img)
-      end
+      # params[:item_images]["name"].each do |img|
+      #   @item_image = @item.item_images.create!(name: img)
+      # end
       redirect_to root_path
     else
       redirect_to new_item_path
@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @image = ItemImage.find(params[:id])
+
   end
 
   def edit
@@ -78,8 +79,8 @@ class ItemsController < ApplicationController
       :postage,
       :region,
       :delivery_schedule,
-      :price,
-      item_images_attributes: [:name]).merge(seller_id: current_user.id)
+      :price)
+      # item_images_attributes: [:name]).merge(seller_id: current_user.id)
   end
 
   def image_params

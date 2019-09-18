@@ -28,6 +28,17 @@ class HomeController < ApplicationController
   def card
     @user = current_user
     # @credit_card = Credit_card.find(params[:id])
+  end
+
+  def identification
+    @user = current_user
+  end
+
+  def email_password
+    @user = current_user
+
+  end
+
   def identification
 
   end
@@ -73,7 +84,9 @@ class HomeController < ApplicationController
   end
 
   private
+
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
+
 end
