@@ -31,6 +31,7 @@ class HomeController < ApplicationController
   def identification
     @user = current_user
   end
+end
 
   def email_password
     @user = current_user
