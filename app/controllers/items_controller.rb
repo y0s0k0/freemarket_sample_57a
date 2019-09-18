@@ -16,13 +16,11 @@ class ItemsController < ApplicationController
 
   def create
     # @item = Item.new(item_params.merge(set_exhibit).merge(user_id: 1))
-    @item = Item.new(item_params.merge(set_exhibit).merge(user_id: 1))
+    @item = Item.new(item_params.merge(set_exhibit))
     @category_parent_array = []
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
-
-    binding.pry
     if @item.save
       params[:item_images]["name"].each do |img|
         @item_image = @item.item_images.create!(name: img)
@@ -36,8 +34,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @image = ItemImage.find(params[:id])
-    # binding.pry
-  end
+  enda
 
   def edit
     @item = Item.find(params[:id])
