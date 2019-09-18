@@ -5,7 +5,7 @@
       %h2 商品の情報を入力
     = form_for @item do |f|{class: "exhibit-main__image-content"}
       .exhibit-main__image-content__form
-        = f.fields_for @item_images do |img|
+        = f.fields_for :item_images do |img|
           .exhibit-main__image-content__form--title
             %h3 出品画像
             %span
@@ -18,7 +18,7 @@
                 %h3
                   ドラッグアンドドロップ
                   %br またはクリックしてファイルをアップロード
-              = img.file_field :image, id: "file", class: "exhibit-main__image-content__form__body--file", name: "item_images[image][]", accept: "image/*", multiple: true
+              = img.file_field :image, id: "file", class: "exhibit-main__image-content__form__body--file", name: "item_images[image][]", accept: "image/*", multiple: "multiple", "data-image": 0
       .exhibit-main__description
         .exhibit-main__description__title
           %label

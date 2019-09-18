@@ -38,6 +38,8 @@ class HomeController < ApplicationController
     @user = current_user
   end
 
+  end
+
   def identification
     @user = current_user
   end
@@ -75,6 +77,5 @@ class HomeController < ApplicationController
     def move_to_index
       redirect_to action: :index unless user_signed_in?
     end
-
 
 end
