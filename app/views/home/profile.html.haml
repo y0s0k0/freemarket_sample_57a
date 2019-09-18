@@ -10,10 +10,9 @@
         .main-contents__right--back-profile-el-image
           %figure
             =image_tag "//static.mercdn.net/thumb/members/917205767.jpg?1450362912",width: "60",class: "main-contents__right--back-profile-el-image-in"
-          %input{value: @user.nickname }
+          %input
       .main-contents__right-textarea
-        %textarea{placeholder: "例）動物園巡りが趣味で、カピバラのぬいぐるみを集めています！最近はフクロウが好きになってきたのでカピバラのぬいぐるみを出品中です！よろしくお願いします😄"}
-        -# %textarea(name="" cols="30" rows="10")
+        %textarea(name="" cols="30" rows="10")
       .main-contents__right-item
         %p
           =link_to "変更する","#", class: "main-contents__right-item-change"
