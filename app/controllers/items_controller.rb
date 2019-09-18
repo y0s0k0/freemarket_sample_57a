@@ -41,18 +41,12 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     @image = ItemImage.find(params[:id])
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
   end
 
   def update
-
     @item = Item.find(params[:id])
-    @item.update(item_params)
+    @item.update(params_int(item_params))
     redirect_to "/home/exhibit_product/#{@item.id}"
-   
   end
 
   def category
@@ -78,6 +72,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(
       :name,
       :description,
+      :category_id,
       :condition,
       :postage,
       :region,
@@ -94,22 +89,20 @@ class ItemsController < ApplicationController
     {transaction_condition: 1}
   end
 
-  # def params_int(item_params)
-  #   item_params.each do |key,value|
-  #     if integer_string?(value)
-  #       item_params[key]=value.to_i
-  #     end
-  #   end
-  # end
+  def params_int(item_params)
+    item_params.each do |key,value|
+      if integer_string?(value)
+        item_params[key]=value.to_i
+      end
+    end
+  end
 
-  # def integer_string?(str)
-  #   Integer(str)
-  #   true
-  # rescue ArgumentError
-  #   false
-  # end
-
-  
+  def integer_string?(str)
+    Integer(str)
+    true
+  rescue ArgumentError
+    false
+  end
 
 end
 
