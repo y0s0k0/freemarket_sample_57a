@@ -3,24 +3,31 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.build
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+    @item_images = @item.item_images.build
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def get_category_children
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
   end
 
   def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_name]}").children
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
   def create
+    # @item = Item.new(item_params.merge(set_exhibit).merge(user_id: 1))
     @item = Item.new(item_params.merge(set_exhibit).merge(user_id: 1))
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    binding.pry
     if @item.save
+      params[:item_images]["name"].each do |img|
+        @item_image = @item.item_images.create!(name: img)
+      end
       redirect_to root_path
     else
       redirect_to new_item_path
@@ -72,7 +79,11 @@ class ItemsController < ApplicationController
       :region,
       :delivery_schedule,
       :price,
-      item_images_attributes:[:item_id, :image])
+      item_images_attributes: [:name])
+  end
+
+  def image_params
+    params.require(:item_image).permit(:image)
   end
   
   def set_exhibit

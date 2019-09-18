@@ -138,7 +138,8 @@
 |delivery_schedule|string|null: false|
 |price|integer|null: false|
 |transaction_condition|integer|null: false|
-|user|references|null: false, foreign_key: true|
+|seller_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
