@@ -33,7 +33,10 @@
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
+                      -if i.transaction_condition == 2
+                        .sold
+                          %p SOLD
+                      =image_tag "#{@image[n][:image]}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
@@ -49,7 +52,10 @@
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
+                      -if i.transaction_condition == 2
+                        .sold
+                          %p SOLD
+                      =image_tag "#{@image[n][:image]}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
               
@@ -66,7 +72,10 @@
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
+                      -if i.transaction_condition == 2
+                        .sold
+                          %p SOLD
+                      =image_tag "#{@image[n][:image]}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
@@ -82,7 +91,10 @@
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
+                      -if i.transaction_condition == 2
+                        .sold
+                          %p SOLD
+                      =image_tag "#{@image[n][:image]}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
               
@@ -108,7 +120,10 @@
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
+                      -if i.transaction_condition == 2
+                        .sold
+                          %p SOLD
+                      =image_tag "#{@image[n][:image]}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
@@ -124,7 +139,10 @@
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
+                      -if i.transaction_condition == 2
+                        .sold
+                          %p SOLD
+                      =image_tag "#{@image[n][:image]}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name             
 
@@ -140,7 +158,10 @@
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
+                      -if i.transaction_condition == 2
+                        .sold
+                          %p SOLD
+                      =image_tag "#{@image[n][:image]}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
 
@@ -156,7 +177,10 @@
                       %span.item-container__wrapper-contents-parts-box-in-price
                         ¥
                         = i.price
-                      =image_tag "#{@image[n].image}", :width => "188" ,height: "188"
+                      -if i.transaction_condition == 2
+                        .sold
+                          %p SOLD
+                      =image_tag "#{@image[n][:image]}", :width => "188" ,height: "188"
                     .item-container__wrapper-contents-parts-box-text
                       %p.item-container__wrapper-contents-parts-box-text-title= i.name
                             

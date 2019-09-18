@@ -16,6 +16,11 @@ class HomeController < ApplicationController
   def logout
   end
 
+  def card
+    @user = current_user
+    # @credit_card = Credit_card.find(params[:id])
+  end
+
   def identification
 
   end
@@ -47,6 +52,9 @@ class HomeController < ApplicationController
     redirect_to home_list_exhibit_path
   end
 
-  def card 
+  private
+    def move_to_index
+      redirect_to action: :index unless user_signed_in?
+    end
+
   end
-end
