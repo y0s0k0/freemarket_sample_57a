@@ -9,14 +9,16 @@
           = image_tag "m59627988225_1.jpg"
           %p COACH コーチ ショルダーバッグ
         %p.purchase-main__detail__container__price
-          ¥4,500
+          ¥
+          = @item.price
           %span 送料込み
         %p.purchase-main__detail__container__point ポイントはありません
         .purchase-main__detail__container__pay
           %span.purchase-main__detail__container__pay--title
             支払い金額
           %span.purchase-main__detail__container__pay--price
-            ¥4,500
+            ¥
+            = @item.price
         = link_to "購入する", new_purchase_path, class: "purchase-main__detail__container__button"
     .purchase-main__delivery-info
       .purchase-main__delivery-info__container
@@ -24,9 +26,16 @@
           %h3.purchase-main__delivery-info__container__detail--title
             配送先
           %p.purchase-main__delivery-info__container__detail--address
-            〒123-4567
-            %br 愛知県◯◯市◯◯ ◯◯-◯◯
-            %span 愛知太郎
+            〒
+            = @user.zip
+            %br
+              = @user.prefecture
+              = @user.city
+              = @user.address
+              = @user.building
+            %span
+              = @user.last_name
+              = @user.first_name
         = link_to "変更する ＞", new_purchase_path, class: "purchase-main__delivery-info__container--change"
     .purchase-main__method
       .purchase-main__method__container
