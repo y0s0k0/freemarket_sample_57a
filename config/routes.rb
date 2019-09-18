@@ -10,11 +10,10 @@ Rails.application.routes.draw do
   get 'home/list_exhibit' => 'home#list_exhibit'
   get 'home/search' => 'home#search'
   get 'home/exhibit_product/:id' => 'home#exhibit_product'
-<<<<<<< HEAD
+
   get 'home/card_create'  => 'home#card_create'
   get 'items/exhibit_product/:id' => 'itmes#exhibit_product'
-=======
->>>>>>> parent of ae4246c... Merge pull request #29 from y0s0k0/category#2
+
   get 'home/card'  => 'home#card'
   delete  'home/:id'  => 'home#destroy'
   get 'items/category' => 'items#category'

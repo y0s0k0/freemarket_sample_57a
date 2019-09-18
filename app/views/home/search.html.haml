@@ -21,12 +21,10 @@
             .item-container__wrapper-contents-parts-box-search
               .item-container__wrapper-contents-parts-box-search-price-in
                 %span.item-container__wrapper-contents-parts-box-in-price= i.price
-
                 -if i.transaction_condition == 2
                   .sold
                     %p SOLD
-                =image_tag "#{@image[n][:image]}", :width => "160" ,height: "160"
-
+                =image_tag "#{@image[n].image}", :width => "160" ,height: "160"
               .item-container__wrapper-contents-parts-box-search-text
                 %p.item-container__wrapper-contents-parts-box-text-title= i.name
 = render partial: "footer"
