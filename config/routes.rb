@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       get "get_category_grandchildren", defaults: {format: "json"}
     end
   end
-  resources :purchase, only: [:new, :create]
+  resources :purchase, only: [:edit, :update]
   devise_for :users 
   get '/signup' => 'signup#index'
   resources :signup do
