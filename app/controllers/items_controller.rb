@@ -16,16 +16,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params.merge(set_exhibit))
-    binding.pry
-    if @item.save  && image_params[:images][0]
-      image_params[:images].each do |image|
-        @item.item_images.create(image: image, item_id: @item.id)
-      end
-      redirect_to root_path
-    else
-      redirect_to new_item_path
-    end
+    @item = Item.new(item_params)
+    @item.save
+    @item.item_images.create(image_params)
+    redirect_to root_path
   end
 
   def show
@@ -44,23 +38,10 @@ class ItemsController < ApplicationController
     redirect_to "/home/exhibit_product/#{@item.id}"
   end
 
-  def category
-    @parents = Category.where(ancestry: nil)
-  end
-  
-  def search
-    respond_to do |format|
-      format.html
-      format.json do
-        @children = Category.find(params[:parent_id]).children
-      end
-    end
-  end
-
   private
 
-  def find_item
-    @item = Item.find(params[:id])
+  def image_params
+    params.require(:item_images).permit(:item_id, {image: []})
   end
 
   def item_params
@@ -72,8 +53,7 @@ class ItemsController < ApplicationController
       :postage,
       :region,
       :delivery_schedule,
-      :price,
-      item_images_attributes: [:item_id, {image: []}]).merge(seller_id: current_user.id)
+      :price).merge(seller_id: current_user.id)
   end
 
   def image_params
@@ -82,21 +62,6 @@ class ItemsController < ApplicationController
   
   def set_exhibit
     {transaction_condition: 1}
-  end
-
-  def params_int(item_params)
-    item_params.each do |key,value|
-      if integer_string?(value)
-        item_params[key]=value.to_i
-      end
-    end
-  end
-
-  def integer_string?(str)
-    Integer(str)
-    true
-  rescue ArgumentError
-    false
   end
 
 end

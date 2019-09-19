@@ -19,7 +19,7 @@
           %span.purchase-main__detail__container__pay--price
             ¥
             = @item.price
-        = link_to "購入する", new_purchase_path, class: "purchase-main__detail__container__button"
+        = link_to "購入する", purchase_path, method: "patch", class: "purchase-main__detail__container__button"
     .purchase-main__delivery-info
       .purchase-main__delivery-info__container
         .purchase-main__delivery-info__container__detail
@@ -36,7 +36,7 @@
             %span
               = @user.last_name
               = @user.first_name
-        = link_to "変更する ＞", new_purchase_path, class: "purchase-main__delivery-info__container--change"
+        = link_to "変更する ＞", root_path, class: "purchase-main__delivery-info__container--change"
     .purchase-main__method
       .purchase-main__method__container
         %h3.purchase-main__method__container--title
@@ -46,6 +46,6 @@
           %br 09/19
         = image_tag "visa.svg", class: "purchase-main__method__container--image"
         %p.purchase-main__method__container--change
-          = link_to "変更する ＞", new_purchase_path
+          = link_to "変更する ＞", root_path
   = render partial: "items/footer"
     
