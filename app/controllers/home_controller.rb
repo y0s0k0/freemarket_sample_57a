@@ -38,8 +38,6 @@ class HomeController < ApplicationController
     @user = current_user
   end
 
-  end
-
   def identification
     @user = current_user
   end

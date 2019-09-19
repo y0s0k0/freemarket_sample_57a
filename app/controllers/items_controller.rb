@@ -16,9 +16,14 @@ class ItemsController < ApplicationController
   end
 
   def create
+    # @item = Item.new(item_params)
+    # @item.save
+    # binding.pry
+    # ItemImage.create(item_id: @item.id, image: image_params)
+    # redirect_to root_path
     @item = Item.new(item_params)
     @item.save
-    @item.item_images.create(image_params)
+    # @item.item_images.create(item_id: current_user.id, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-WZ8C7WkQNDWIFJnZ8A_mH2aTE1tYLPnsNp5KOSudh3rHX4CTyA")
     redirect_to root_path
   end
 
@@ -41,7 +46,7 @@ class ItemsController < ApplicationController
   private
 
   def image_params
-    params.require(:item_images).permit(:item_id, {image: []})
+    params.require(:item_images).permit(:image)
   end
 
   def item_params
@@ -53,12 +58,12 @@ class ItemsController < ApplicationController
       :postage,
       :region,
       :delivery_schedule,
-      :price).merge(seller_id: current_user.id)
+      :price).merge(seller_id: current_user.id).merge(set_exhibit)
   end
 
-  def image_params
-    params.require(:item_image).permit({images: []})
-  end
+  # def image_params
+  #   params.require(:item_image).permit(images: []})
+  # end
   
   def set_exhibit
     {transaction_condition: 1}
