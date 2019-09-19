@@ -6,8 +6,9 @@
     .purchase-main__detail
       .purchase-main__detail__container
         .purchase-main__detail__container__title
-          = image_tag "m59627988225_1.jpg"
-          %p COACH コーチ ショルダーバッグ
+          = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg"
+          %p
+            = @item.name
         %p.purchase-main__detail__container__price
           ¥
           = @item.price
