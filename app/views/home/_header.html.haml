@@ -24,15 +24,20 @@
 
 
       .header__container-under--right
-        -if user_signed_in?
-          %li
-            %i.far.fa-bell
-            =link_to 'お知らせ','#'
-            %i.fas.fa-check
-            =link_to 'やることリスト','#'
-            =link_to 'マイページ',home_mypage_path 
-        -else 
-          %li
-            =link_to 'ログイン', new_user_session_path, class: "header_login_button"
-            =link_to '新規会員登録', signup_path, class: "header_signup_button"   
+        .header__container-under--right-login
+          -if user_signed_in?
+            %ul
+              %li
+                =link_to 'マイページ',home_mypage_path 
+              %li
+                %i.fas.fa-check
+                =link_to 'やることリスト','#'
+              %li
+                %i.far.fa-bell
+                =link_to 'お知らせ','#'
+          -else 
+            %ul
+              %li
+                =link_to 'ログイン', new_user_session_path, class: "header_login_button"
+                =link_to '新規会員登録', signup_path, class: "header_signup_button"   
 
