@@ -49,19 +49,19 @@ class HomeController < ApplicationController
 
   def list_exhibit
     @item = Item.all.order("id DESC")
-    @image = ItemImage.all.order("id DESC")
+    # @image = ItemImage.all.order("id DESC")
   end
 
   def search
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
     @item_count = Item.where('name LIKE(?)', "%#{params[:keyword]}%").count
     @key = params[:keyword]
-    @image = ItemImage.all
+    # @image = ItemImage.all
   end
 
   def exhibit_product
     @item = Item.find(params[:id])
-    @image = ItemImage.find(params[:id])
+    # @image = ItemImage.find(params[:id])
   end
 
   def destroy

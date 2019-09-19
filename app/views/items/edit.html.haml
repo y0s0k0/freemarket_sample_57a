@@ -5,7 +5,7 @@
       %h2 商品の情報を入力
     = form_for @item do |f|{class: "exhibit-main__image-content"}
       .exhibit-main__image-content__form
-        = f.fields_for @item_images do |img|
+        = f.fields_for :item_images do |img|
           .exhibit-main__image-content__form--title
             %h3 出品画像
             %span
@@ -38,7 +38,7 @@
             %label
               カテゴリー
               %span 必須
-            -# = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: "---"}, id: "parent-form", name: "item[category_id]"
+            = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: "---"}, id: "parent-form", name: "item[category_id]"
           .exhibit-main__detail__input__state
             %label
               商品の状態

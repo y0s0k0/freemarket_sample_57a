@@ -6,21 +6,21 @@
       = @item.name
       .item-show-main__container__info
         .item-show-main__container__info__image
-          = image_tag @image[:image], class: "item-show-main__container__info__image--large"
+          = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image--large"
           -if @item.transaction_condition == 2
             .sold
               %p SOLD
           .item-show-main__container__info__image__small
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
-            = image_tag "https://static.mercdn.net/thumb/photos/m78422326439_1.jpg?1567068061", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
+            = image_tag "https://i.pinimg.com/originals/11/80/c3/1180c317f8306d4fed8ca722393bc384.jpg", class: "item-show-main__container__info__image__small__upload"
         %table.item-show-main__container__info__detail{border: "1"}
           %tr.item-show-main__container__info__detail__seller
             %th.item-show-main__container__info__detail__seller__head
@@ -37,34 +37,32 @@
             %td.item-show-main__container__info__detail__category__data
               %p
                 = link_to do
-                  -# =@item.category
+                  レディース
                 %br
                 = link_to do
-                  >
-                  -# =@item.category
+                  >トップス
                 %br
                 = link_to do
-                  >
-                  -# =@item.category
+                  >Tシャツ/カットソー(半袖/袖なし)
 
           %tr.item-show-main__container__info__detail__brand
             %th.item-show-main__container__info__detail__brand__head
               ブランド
             %td.item-show-main__container__info__detail__brand__data
               = link_to item_path do
-                =@item.brand
+                ディズニー
 
           %tr.item-show-main__container__info__detail__condition
             %th.item-show-main__container__info__detail__condition__head
               商品の状態
             %td.item-show-main__container__info__detail__condition__data
-              =@item.condition.to_i
+              新品、未使用
 
           %tr.item-show-main__container__info__detail__charge
             %th.item-show-main__container__info__detail__charge__head
               配送料の負担
             %td.item-show-main__container__info__detail__charge__data
-              =@item.postage.to_i
+              送料込み（出品者負担）
 
           %tr.item-show-main__container__info__detail__delivery
             %th.item-show-main__container__info__detail__delivery__head
@@ -78,13 +76,13 @@
               発送元地域
             %td.item-show-main__container__info__detail__region__data
               = link_to item_path do
-                =@item.region
+                北海道
 
           %tr.item-show-main__container__info__detail__shipping
             %th.item-show-main__container__info__detail__shipping__head
               発送の目安
             %td.item-show-main__container__info__detail__shipping__data
-              =@item.delivery_schedule
+              1~2日で発送
       .item-show-main__container__price
         %span.item-show-main__container__price--left
           ¥

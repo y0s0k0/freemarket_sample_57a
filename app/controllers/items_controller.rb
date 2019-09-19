@@ -29,17 +29,18 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @image = ItemImage.find(params[:id])
+    # @image = ItemImage.find(params[:id])
   end
 
   def edit
     @item = Item.find(params[:id])
-    @image = ItemImage.find(params[:id])
+    @category_parent_array = Category.where(ancestry: nil)
+    # @image = ItemImage.find(params[:id])
   end
 
   def update
     @item = Item.find(params[:id])
-    @item.update(params_int(item_params))
+    # @item.update(params_int(item_params))
     redirect_to "/home/exhibit_product/#{@item.id}"
   end
 
