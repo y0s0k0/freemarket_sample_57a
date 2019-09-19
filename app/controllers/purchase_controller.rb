@@ -7,8 +7,6 @@ class PurchaseController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    
-    # binding.pry
     if @item.update(transaction_condition: 2, buyer_id: current_user.id)
       redirect_to root_path
     else
